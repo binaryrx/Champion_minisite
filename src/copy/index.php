@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <title>Chamption Minisite</title>
     <meta name="description" content="Chamption Minisite">
-    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self';
      script-src 'unsafe-inline' 'self' https://code.jquery.com/ https://www.googletagmanager.com/ https://kit.fontawesome.com/ https://www.google-analytics.com/ https://www.googleadservices.com/ https://connect.facebook.net/ https://211412.tctm.co/t https://googleads.g.doubleclick.net/ https://facebook.com/ https://google.com/ https://google.co.il/ https://211412.tctm.co/t.js https://k.co.il/ https://www.bmby.com/; 
@@ -35,8 +36,8 @@
     <!-- Add favicon -->
     <!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
     <!-- preload -->
-    <link rel="preload" href="fonts/AlmoniDLAAA-Regular.ttf" as="font" crossorigin=anonymous>
-    <link rel="preload" href="fonts/AlmoniDLAAA-Bold.otf" as="font" crossorigin=anonymous>
+    <link rel="preload" href="fonts/NarkisTam-Medium_MFW.ttf" as="font" crossorigin=anonymous>
+    <link rel="preload" href="fonts/NarkisTam-Bold_MFW.ttf" as="font" crossorigin=anonymous>
     <!-- <link rel="preload" href="images/desktop/bg.webp" as="image" crossorigin=anonymous> -->
   
   <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -76,19 +77,35 @@
       <section class="welcome">
         <div class="outer">
           <div class="inner">
-            <h3>אירוע המכירות של השנה חוזר!</h3>
-            
-            <img src="" alt="">
-            <h2>11-13 בספטמבר</h2>
+            <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
+            <h2 class="desktop"><span>___</span> <span>11-13 בספטמבר </span><span>___</span></h2>
+            <img src="images/desktop/cars_logos_white.png" alt="">
+            <h3 class="subTxt">מותגי הרכב המובילים בעולם בהטבות שאסור לפספס</h3>
+            <h2 class="mobile"><div></div>11-13 בספטמבר</h2>
+          </div>
+
+          <div class="buttons desktop downArrow" >
+            <a href="#carSelect" >
+              <span>לצפייה בדגמים</span>              
+              <img src="images/desktop/arrows.png" alt="">
+            </a>
           </div>
 
           <div class="buttons mobile">
-            <button class="btn btn--secondary">להשארת פרטים</button>
-            <button class="btn btn--secondary">לשיחה עם נציג</button>
+
+            <button class="btn btn--secondary">להשארת פרטים
+              <img src="images/mobile/triangle.png" alt="">
+            </button>
+
+            <button class="btn btn--secondary">לשיחה עם נציג
+            <img src="images/mobile/phone_icon.png" alt="">
+            </button>
+            
           </div>
 
           <div class="legal mobile">
             <a href="#">דרגות זיהום ובטיחות</a>
+            <span>|</span>
             <a href="#">הערות משפטיות</a>
           </div>
 
@@ -175,7 +192,7 @@
 
       <!-- CARS SELECTIONS SECTION -->
 
-      <section class="carsSelection">
+      <section class="carsSelection" id="carSelect">
         <div class="selection">
 
           <!-- Instructions , head -->
@@ -187,21 +204,21 @@
           <!-- SELECT CAR TYPE -->
           <div class="selectionCont">
             <div class="selection__types types">
-              <div class="type type--1" data-car-type="compact">קומפקטית</div>
-              <div class="type type--2" data-car-type="family">משפחתית</div>
-              <div class="type type--3" data-car-type="suv">SUV</div>
-              <div class="type type--4" data-car-type="manager">מנהלים</div>
-              <div class="type type--5" data-car-type="sport">ספורט</div>
+              <div class="type type--1 compact" data-car-type="compact"><span class="mobile">קומפקטית</span></div>
+              <div class="type type--2 family" data-car-type="family"><span class="mobile">משפחתית</span></div>
+              <div class="type type--3 suv" data-car-type="suv"><span class="mobile">SUV</span></div>
+              <div class="type type--4 manager" data-car-type="manager"><span class="mobile">מנהלים</span></div>
+              <div class="type type--5 sport" data-car-type="sport"><span class="mobile">ספורט</span></div>
             </div>
 
             <!-- SELECT BRAND -->
 
             <div class="selection__brands brands">
 
-              <div class="brand brand--1" data-car-brand="audi">AUDI</div>
-              <div class="brand brand--2" data-car-brand="seat">SEAT</div>
-              <div class="brand brand--3" data-car-brand="skoda">SKODA</div>
-              <div class="brand brand--4" data-car-brand="volkswagen">VOLKSWAGEN</div>
+              <div class="brand brand--1 audi" data-car-brand="audi"></div>
+              <div class="brand brand--2 seat" data-car-brand="seat"></div>
+              <div class="brand brand--3 skoda" data-car-brand="skoda"></div>
+              <div class="brand brand--4 volkswagen" data-car-brand="volkswagen"></div>
             </div>
           </div>
         </div>
@@ -213,37 +230,84 @@
         <div class="selection__cars cars">
           
             <div class="car" data-car-name="fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
-            <div class="content">fabia</div>
+              <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div>
             </div>
 
             <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg') ">
-            <div class="content">audiA1</div>
+            <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car" data-car-name="fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
-            <div class="content">fabia</div>
+              <div class="content">fabia</div>
             </div>
 
             <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-            <div class="content">audiA1</div>
+              <div class="content">audiA1</div>
             </div>
 
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
+              <div class="content">audiA1</div>
+            </div>
+
+
+
+
           </div>
+
+          <footer id="foot">
+            <div class="cont">
+              <button class="mobile"><span>להשארת פרטים</span> לחצו כאן &nbsp;>></button>
+              <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל.</p>
+              <!-- <img src="images/desktop/champion_logo.png" alt="chamption motors"> -->
+              <img src="images/desktop/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="desktop">
+              <img src="images/mobile/footer_logos.png" alt="Volkswagen Seat Skoda Audi" class="mobile footerImg">
+            </div>
+          </footer>
       </section>
     </main>
   
     <script>
-     
-
-
-   
-      
-      
-    
-      
     
     
     </script>
+
+    <script src="js/zoom.min.js"></script>
     <script src="js/formValidationAjax.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/carFilter.js"></script>

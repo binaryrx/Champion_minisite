@@ -8,12 +8,7 @@
 
 
 
- //add css to car class.
- var cars = document.querySelectorAll('.car');
- function addBgStyle(element){
-  element.style.backgroundSize = 'contain';
- }
- cars.forEach(addBgStyle);
+
 
 
 

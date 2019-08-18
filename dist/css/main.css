@@ -385,19 +385,19 @@ template {
 }
 
 @font-face {
-  font-family: ambi;
-  font-weight: 200;
-  /*light*/
-  font-style: normal;
-  src: url("../fonts/AlmoniDLAAA-Light.otf");
-}
-
-@font-face {
-  font-family: ambi;
+  font-family: NarkisTam;
   font-weight: 400;
   /*regular*/
   font-style: normal;
-  src: url("../fonts/AlmoniDLAAA-Regular.ttf");
+  src: url("../fonts/NarkisTam-Medium_MFW.ttf");
+}
+
+@font-face {
+  font-family: NarkisTam;
+  font-weight: 600;
+  /*bold*/
+  font-style: normal;
+  src: url("../fonts/NarkisTam-Bold_MFW.ttf");
   /* src: url("fonts/ambivalenti-regular-aaa.woff")format(woff);  */
 }
 
@@ -656,32 +656,88 @@ input[type=checkbox]:checked + label:before {
   }
 }
 
-/* line 3, src/sass/components/_general.scss */
+/* line 5, src/sass/components/_general.scss */
 body {
   direction: rtl;
   width: 100%;
+  font-family: NarkisTam;
+  font-weight: 200;
 }
 
-/* line 9, src/sass/components/_general.scss */
+/* line 13, src/sass/components/_general.scss */
 section.welcome {
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
-  width: 75%;
-  background: url("../images/desktop/welcome_bg.jpg");
+  width: 100%;
+  background: url("../images/desktop/welcome_bg_full.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0, center;
+  background-size: 100% 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-/* line 17, src/sass/components/_general.scss */
+/* line 25, src/sass/components/_general.scss */
 section.welcome .outer {
   margin: 0 auto;
+  margin-left: 42%;
   text-align: center;
 }
 
-/* line 23, src/sass/components/_general.scss */
+/* line 29, src/sass/components/_general.scss */
+section.welcome .outer .inner {
+  color: #fff;
+  font-family: NarkisTam;
+  font-weight: bold;
+}
+
+/* line 34, src/sass/components/_general.scss */
+section.welcome .outer .inner h3, section.welcome .outer .inner h2 {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 38, src/sass/components/_general.scss */
+section.welcome .outer .inner h3.topTxt {
+  margin: 0;
+  padding: 0;
+  font-size: 2.6vw;
+}
+
+/* line 43, src/sass/components/_general.scss */
+section.welcome .outer .inner h3.subTxt {
+  font-size: 1.2vw;
+  margin-bottom: 1vh;
+}
+
+/* line 47, src/sass/components/_general.scss */
+section.welcome .outer .inner h2 {
+  margin-bottom: 2.5vh;
+}
+
+/* line 48, src/sass/components/_general.scss */
+section.welcome .outer .inner h2 span:nth-child(odd) {
+  vertical-align: super;
+  display: inline-block;
+}
+
+/* line 58, src/sass/components/_general.scss */
+section.welcome .outer .downArrow a {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 63, src/sass/components/_general.scss */
+section.welcome .outer .downArrow a span {
+  display: block;
+}
+
+/* line 71, src/sass/components/_general.scss */
 section.form {
   position: fixed;
   top: 0;
@@ -689,16 +745,19 @@ section.form {
   height: 100vh;
   width: 25%;
   background: url("../images/desktop/form_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0, center;
+  background-size: 100% 100%;
 }
 
-/* line 31, src/sass/components/_general.scss */
+/* line 83, src/sass/components/_general.scss */
 section.form .outer {
   margin: 0 auto;
   text-align: center;
   margin-top: 15vh;
 }
 
-/* line 35, src/sass/components/_general.scss */
+/* line 87, src/sass/components/_general.scss */
 section.form .outer .inner {
   font-size: 1.2vw;
   color: #fff;
@@ -707,7 +766,7 @@ section.form .outer .inner {
   width: 65%;
 }
 
-/* line 45, src/sass/components/_general.scss */
+/* line 97, src/sass/components/_general.scss */
 section.form .outer .inner form input, section.form .outer .inner form select {
   border: 2px solid #fff;
   padding: 5px 10px;
@@ -718,7 +777,7 @@ section.form .outer .inner form input, section.form .outer .inner form select {
   width: 100%;
 }
 
-/* line 53, src/sass/components/_general.scss */
+/* line 105, src/sass/components/_general.scss */
 section.form .outer .inner form input::-webkit-input-placeholder, section.form .outer .inner form select::-webkit-input-placeholder {
   color: #fff;
 }
@@ -732,12 +791,12 @@ section.form .outer .inner form input::placeholder, section.form .outer .inner f
   color: #fff;
 }
 
-/* line 57, src/sass/components/_general.scss */
+/* line 109, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars {
   width: 100%;
 }
 
-/* line 59, src/sass/components/_general.scss */
+/* line 111, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars h3 {
   margin: 0;
   margin-top: 1vh;
@@ -745,7 +804,7 @@ section.form .outer .inner form .formSelectedCars h3 {
   text-align: right;
 }
 
-/* line 65, src/sass/components/_general.scss */
+/* line 117, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .formCarsCont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -756,17 +815,17 @@ section.form .outer .inner form .formSelectedCars .formCarsCont {
           flex-flow: row wrap;
 }
 
-/* line 68, src/sass/components/_general.scss */
+/* line 120, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar {
   width: 50%;
 }
 
-/* line 71, src/sass/components/_general.scss */
+/* line 123, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar .inner {
   width: 95%;
 }
 
-/* line 74, src/sass/components/_general.scss */
+/* line 126, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar .inner div {
   width: 100%;
   background: lightgrey;
@@ -779,7 +838,7 @@ section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar
   border-radius: 15px;
 }
 
-/* line 84, src/sass/components/_general.scss */
+/* line 136, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar .inner div a {
   position: absolute;
   width: 0.5vw;
@@ -794,10 +853,11 @@ section.form .outer .inner form .formSelectedCars .formCarsCont .formSelectedCar
   text-decoration: none;
 }
 
-/* line 102, src/sass/components/_general.scss */
+/* line 154, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars button {
   width: 100%;
-  background: blue;
+  background: url(../images/desktop/buttons/blue_BTN.png);
+  background-size: cover;
   font-size: 2vw;
   color: #fff;
   border: none;
@@ -805,36 +865,41 @@ section.form .outer .inner form .formSelectedCars button {
   margin-bottom: 1vh;
 }
 
-/* line 111, src/sass/components/_general.scss */
+/* line 164, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .checkbox {
   text-align: right;
   margin-bottom: 1vh;
-  font-size: 0.70vw;
+  font-size: 0.55vw;
   padding-right: 1.2vw;
   text-indent: -0.6vw;
 }
 
-/* line 117, src/sass/components/_general.scss */
+/* line 170, src/sass/components/_general.scss */
 section.form .outer .inner form .formSelectedCars .checkbox a {
   text-decoration: none;
   color: #fff;
 }
 
-/* line 130, src/sass/components/_general.scss */
+/* line 187, src/sass/components/_general.scss */
 section.carsSelection {
+  background: url(../images/desktop/cars_section_bg.jpg);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
   position: absolute;
   right: 0;
   width: 75%;
   margin-top: 100vh;
+  color: #fff;
 }
 
-/* line 135, src/sass/components/_general.scss */
+/* line 197, src/sass/components/_general.scss */
 section.carsSelection .selection {
   width: 93%;
   margin: 0 auto;
 }
 
-/* line 139, src/sass/components/_general.scss */
+/* line 201, src/sass/components/_general.scss */
 section.carsSelection .selection__head {
   width: 100%;
   display: block;
@@ -842,7 +907,7 @@ section.carsSelection .selection__head {
   text-align: center;
 }
 
-/* line 145, src/sass/components/_general.scss */
+/* line 208, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,7 +917,7 @@ section.carsSelection .selection .selectionCont {
           justify-content: space-between;
 }
 
-/* line 149, src/sass/components/_general.scss */
+/* line 212, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .types {
   width: 50%;
   display: -webkit-box;
@@ -867,7 +932,7 @@ section.carsSelection .selection .selectionCont .types {
           flex-flow: row nowrap;
 }
 
-/* line 154, src/sass/components/_general.scss */
+/* line 217, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .types .type {
   width: 6vw;
   height: 6vw;
@@ -875,12 +940,69 @@ section.carsSelection .selection .selectionCont .types .type {
   font-size: 0.8vw;
 }
 
-/* line 160, src/sass/components/_general.scss */
+/* line 223, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .types .type-selected {
   background: tomato;
 }
 
-/* line 165, src/sass/components/_general.scss */
+/* line 226, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .compact, section.carsSelection .selection .selectionCont .types .family, section.carsSelection .selection .selectionCont .types .suv, section.carsSelection .selection .selectionCont .types .manager, section.carsSelection .selection .selectionCont .types .sport {
+  background-size: cover !important;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+/* line 230, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .compact {
+  background: url(../images/desktop/buttons/compact_BTN.jpg);
+}
+
+/* line 233, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .compact.type-selected {
+  background: url(../images/desktop/buttons/compact_BTN_blue.jpg);
+}
+
+/* line 236, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .family {
+  background: url(../images/desktop/buttons/family_BTN.jpg);
+}
+
+/* line 239, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .family.type-selected {
+  background: url(../images/desktop/buttons/family_BTN_blue.jpg);
+}
+
+/* line 242, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .suv {
+  background: url(../images/desktop/buttons/suv_BTN.jpg);
+}
+
+/* line 245, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .suv.type-selected {
+  background: url(../images/desktop/buttons/suv_BTN_blue.jpg);
+}
+
+/* line 248, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .manager {
+  background: url(../images/desktop/buttons/managers_BTN.jpg);
+}
+
+/* line 251, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .manager.type-selected {
+  background: url(../images/desktop/buttons/managers_BTN_blue.jpg);
+}
+
+/* line 254, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .sport {
+  background: url(../images/desktop/buttons/sport_BTN.jpg);
+}
+
+/* line 257, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .types .sport.type-selected {
+  background: url(../images/desktop/buttons/sport_BTN_blue.jpg);
+}
+
+/* line 262, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .brands {
   width: 40%;
   display: -webkit-box;
@@ -895,7 +1017,7 @@ section.carsSelection .selection .selectionCont .brands {
           flex-flow: row nowrap;
 }
 
-/* line 170, src/sass/components/_general.scss */
+/* line 267, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .brands .brand {
   width: 6vw;
   height: 6vw;
@@ -903,18 +1025,65 @@ section.carsSelection .selection .selectionCont .brands .brand {
   font-size: 0.8vw;
 }
 
-/* line 176, src/sass/components/_general.scss */
+/* line 273, src/sass/components/_general.scss */
 section.carsSelection .selection .selectionCont .brands .brand-selected {
   background: orangered;
 }
 
-/* line 182, src/sass/components/_general.scss */
+/* line 276, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .audi, section.carsSelection .selection .selectionCont .brands .seat, section.carsSelection .selection .selectionCont .brands .skoda, section.carsSelection .selection .selectionCont .brands .volkswagen {
+  background-size: cover !important;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+/* line 280, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .audi {
+  background: url(../images/desktop/buttons/audi_BTN.jpg);
+}
+
+/* line 283, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .audi.brand-selected {
+  background: url(../images/desktop/buttons/audi_BTN_blue.jpg);
+}
+
+/* line 286, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .skoda {
+  background: url(../images/desktop/buttons/skoda_BTN.jpg);
+}
+
+/* line 289, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .skoda.brand-selected {
+  background: url(../images/desktop/buttons/skoda_BTN_blue.jpg);
+}
+
+/* line 292, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .seat {
+  background: url(../images/desktop/buttons/seat_BTN.jpg);
+}
+
+/* line 295, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .seat.brand-selected {
+  background: url(../images/desktop/buttons/seat_BTN_blue.jpg);
+}
+
+/* line 298, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .volkswagen {
+  background: url(../images/desktop/buttons/vw_BTN.jpg);
+}
+
+/* line 301, src/sass/components/_general.scss */
+section.carsSelection .selection .selectionCont .brands .volkswagen.brand-selected {
+  background: url(../images/desktop/buttons/vw_BTN_blue.jpg);
+}
+
+/* line 308, src/sass/components/_general.scss */
 section.carsSelection .carSelectionHeader {
   margin: 0 auto;
   text-align: center;
 }
 
-/* line 187, src/sass/components/_general.scss */
+/* line 313, src/sass/components/_general.scss */
 section.carsSelection .cars {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
@@ -923,7 +1092,7 @@ section.carsSelection .cars {
   margin: 0 auto;
 }
 
-/* line 197, src/sass/components/_general.scss */
+/* line 324, src/sass/components/_general.scss */
 section.carsSelection .cars .car {
   padding-top: 100%;
   -webkit-box-sizing: border-box;
@@ -934,41 +1103,216 @@ section.carsSelection .cars .car {
   background: orangered;
 }
 
-/* line 205, src/sass/components/_general.scss */
+/* line 332, src/sass/components/_general.scss */
 section.carsSelection .cars .car .content {
+  color: #000;
   position: absolute;
-  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+  font-size: 1vw;
+}
+
+/* line 343, src/sass/components/_general.scss */
+section.carsSelection footer {
+  margin-top: 4vh;
+  background: #fff;
+  border-top: 2px solid #CFCFCF;
+}
+
+/* line 347, src/sass/components/_general.scss */
+section.carsSelection footer .cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1vw 0 1vw 5vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 352, src/sass/components/_general.scss */
+section.carsSelection footer .cont p {
+  color: #000;
+  margin: 0;
+  margin-right: 5vw;
+  font-size: 1.1vw;
+  padding: 0;
+}
+
+/* line 360, src/sass/components/_general.scss */
+section.carsSelection footer .cont img {
+  width: 40%;
+  height: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 222, src/sass/components/_general.scss */
+  /* line 372, src/sass/components/_general.scss */
+  body {
+    overflow-x: hidden;
+  }
+  /* line 376, src/sass/components/_general.scss */
   section.welcome {
+    background: url("../images/mobile/mobile_bg.jpg");
+    background-size: cover;
     width: 100vw;
     height: 80vh;
   }
-  /* line 226, src/sass/components/_general.scss */
+  /* line 382, src/sass/components/_general.scss */
+  section.welcome .outer {
+    margin: 0 auto;
+  }
+  /* line 387, src/sass/components/_general.scss */
+  section.welcome .outer .inner h3, section.welcome .outer .inner h2 {
+    padding: 0;
+    margin: 0;
+  }
+  /* line 391, src/sass/components/_general.scss */
+  section.welcome .outer .inner h3.topTxt {
+    margin: 0;
+    padding: 0;
+    font-size: 5.6vw;
+    margin-top: 8vh;
+    margin-bottom: 30vh;
+  }
+  /* line 398, src/sass/components/_general.scss */
+  section.welcome .outer .inner img {
+    width: 65%;
+    margin-bottom: 1.5vh;
+  }
+  /* line 402, src/sass/components/_general.scss */
+  section.welcome .outer .inner h3.subTxt {
+    font-weight: 200;
+    font-size: 3.1vw;
+    margin-bottom: 1vh;
+  }
+  /* line 407, src/sass/components/_general.scss */
+  section.welcome .outer .inner h2 {
+    font-size: 9.2vw;
+    margin-bottom: 2.5vh;
+  }
+  /* line 411, src/sass/components/_general.scss */
+  section.welcome .outer .inner h2 div {
+    border-top: 1px solid #CFCFCF;
+    width: 66%;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+  }
+  /* line 417, src/sass/components/_general.scss */
+  section.welcome .outer .inner h2 span:nth-child(odd) {
+    vertical-align: super;
+    display: inline-block;
+  }
+  /* line 426, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 2vh;
+  }
+  /* line 431, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile .btn {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    width: 42%;
+    height: 7vh;
+    padding: 2vw 3vw;
+    font-size: 4.6vw;
+    font-weight: 600;
+  }
+  /* line 442, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile .btn:first-child {
+    margin-right: 6vw;
+    background: url(../images/mobile/buttons/details_BTN.png);
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    font-weight: 200;
+  }
+  /* line 449, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile .btn:first-child img {
+    vertical-align: text-bottom;
+  }
+  /* line 454, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile .btn:last-child {
+    margin-left: 6vw;
+  }
+  /* line 456, src/sass/components/_general.scss */
+  section.welcome .outer .buttons.mobile .btn:last-child img {
+    vertical-align: bottom;
+  }
+  /* line 462, src/sass/components/_general.scss */
+  section.welcome .outer .legal {
+    font-size: 3.5vw;
+    color: #598DB6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  /* line 467, src/sass/components/_general.scss */
+  section.welcome .outer .legal a {
+    width: 80%;
+    color: #598DB6;
+  }
+  /* line 471, src/sass/components/_general.scss */
+  section.welcome .outer .legal span {
+    width: 10%;
+  }
+  /* line 474, src/sass/components/_general.scss */
+  section.welcome .outer .legal a:first-child {
+    text-align: left;
+  }
+  /* line 477, src/sass/components/_general.scss */
+  section.welcome .outer .legal a:last-child {
+    text-align: right;
+  }
+  /* line 484, src/sass/components/_general.scss */
   section.form {
     display: none;
   }
-  /* line 230, src/sass/components/_general.scss */
+  /* line 488, src/sass/components/_general.scss */
   section.carsSelection {
     width: 100%;
     margin-top: 80vh;
   }
-  /* line 234, src/sass/components/_general.scss */
+  /* line 492, src/sass/components/_general.scss */
   section.carsSelection .selection {
     width: 90%;
   }
-  /* line 237, src/sass/components/_general.scss */
+  /* line 494, src/sass/components/_general.scss */
+  section.carsSelection .selection__head h3 {
+    font-size: 6.2vw;
+    margin: 0;
+    padding: 0;
+  }
+  /* line 499, src/sass/components/_general.scss */
+  section.carsSelection .selection__head p {
+    margin: 0;
+    padding: 0;
+    margin-top: 0vh;
+    margin-bottom: 1.5vh;
+    font-size: 3.0vw;
+    font-weight: 200;
+  }
+  /* line 507, src/sass/components/_general.scss */
+  section.carsSelection .selection__head p strong {
+    font-weight: 600;
+  }
+  /* line 514, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont {
     display: block;
   }
-  /* line 240, src/sass/components/_general.scss */
+  /* line 517, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .types {
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -981,17 +1325,67 @@ section.carsSelection .cars .car .content {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
-  /* line 247, src/sass/components/_general.scss */
+  /* line 524, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .types .type {
-    width: 12vw;
+    width: 16vw;
     height: 12vw;
     background: lightblue;
+    position: relative;
   }
-  /* line 252, src/sass/components/_general.scss */
+  /* line 529, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .type span {
+    font-size: 2vw;
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  /* line 538, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .types .type-selected {
     background: tomato;
   }
-  /* line 257, src/sass/components/_general.scss */
+  /* line 541, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .compact {
+    background: url(../images/mobile/buttons/compact_BTN.jpg);
+  }
+  /* line 544, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .compact.type-selected {
+    background: url(../images/mobile/buttons/compact_BTN_blue.jpg);
+  }
+  /* line 547, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .family {
+    background: url(../images/mobile/buttons/family_BTN.jpg);
+  }
+  /* line 550, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .family.type-selected {
+    background: url(../images/mobile/buttons/family_BTN_blue.jpg);
+  }
+  /* line 553, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .suv {
+    background: url(../images/mobile/buttons/suv_BTN.jpg);
+  }
+  /* line 556, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .suv.type-selected {
+    background: url(../images/mobile/buttons/suv_BTN_blue.jpg);
+  }
+  /* line 559, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .manager {
+    background: url(../images/mobile/buttons/manager_BTN.jpg);
+  }
+  /* line 562, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .manager.type-selected {
+    background: url(../images/mobile/buttons/manager_BTN_blue.jpg);
+  }
+  /* line 565, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .sport {
+    background: url(../images/mobile/buttons/sport_BTN.jpg);
+  }
+  /* line 568, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .types .sport.type-selected {
+    background: url(../images/mobile/buttons/sport_BTN_blue.jpg);
+  }
+  /* line 575, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .brands {
     margin-bottom: 1vh;
     width: 100%;
@@ -1006,31 +1400,135 @@ section.carsSelection .cars .car .content {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
-  /* line 264, src/sass/components/_general.scss */
+  /* line 582, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .brands .brand {
-    width: 12vw;
-    height: 12vw;
+    width: 20vw;
+    height: 18vw;
     background: lightgrey;
   }
-  /* line 269, src/sass/components/_general.scss */
+  /* line 588, src/sass/components/_general.scss */
   section.carsSelection .selection .selectionCont .brands .brand-selected {
     background: orangered;
   }
-  /* line 276, src/sass/components/_general.scss */
+  /* line 591, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .audi, section.carsSelection .selection .selectionCont .brands .seat, section.carsSelection .selection .selectionCont .brands .skoda, section.carsSelection .selection .selectionCont .brands .volkswagen {
+    background-size: cover !important;
+    -webkit-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+  }
+  /* line 595, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .audi {
+    background: url(../images/mobile/buttons/audi_BTN.jpg);
+  }
+  /* line 598, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .audi.brand-selected {
+    background: url(../images/mobile/buttons/audi_BTN_blue.jpg);
+  }
+  /* line 601, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .skoda {
+    background: url(../images/mobile/buttons/skoda_BTN.jpg);
+  }
+  /* line 604, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .skoda.brand-selected {
+    background: url(../images/mobile/buttons/skoda_BTN_blue.jpg);
+  }
+  /* line 607, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .seat {
+    background: url(../images/mobile/buttons/seat_BTN.jpg);
+  }
+  /* line 610, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .seat.brand-selected {
+    background: url(../images/mobile/buttons/seat_BTN_blue.jpg);
+  }
+  /* line 613, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .volkswagen {
+    background: url(../images/mobile/buttons/vw_BTN.jpg);
+  }
+  /* line 616, src/sass/components/_general.scss */
+  section.carsSelection .selection .selectionCont .brands .volkswagen.brand-selected {
+    background: url(../images/mobile/buttons/vw_BTN_blue.jpg);
+  }
+  /* line 623, src/sass/components/_general.scss */
+  section.carsSelection .carSelectionHeader {
+    color: #05406B;
+    font-size: 3.5vw;
+    font-weight: 600;
+  }
+  /* line 628, src/sass/components/_general.scss */
   section.carsSelection .cars {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 1vw;
     grid-row-gap: 1vw;
+    margin-bottom: 10vh;
   }
-  /* line 284, src/sass/components/_general.scss */
+  /* line 638, src/sass/components/_general.scss */
   section.carsSelection .cars .car {
     height: 46vw;
     background: orangered;
   }
-  /* line 292, src/sass/components/_general.scss */
+  /* line 646, src/sass/components/_general.scss */
   section.carsSelection .cars .car:nth-child(even) {
     background: pink;
+  }
+  /* line 649, src/sass/components/_general.scss */
+  section.carsSelection .cars .car .content {
+    font-size: 5vw;
+  }
+  /* line 659, src/sass/components/_general.scss */
+  footer#foot {
+    margin-top: 4vh;
+    background: #fff;
+    border-top: 2px solid transparent;
+  }
+  /* line 663, src/sass/components/_general.scss */
+  footer#foot .cont {
+    display: block !important;
+    padding: unset;
+    position: relative;
+  }
+  /* line 669, src/sass/components/_general.scss */
+  footer#foot .cont button {
+    margin: 0 auto;
+    width: 90%;
+    background: url(../images/mobile/buttons/form_BTN.png);
+    background-size: cover;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 6vw;
+    padding: 4vw 2vw;
+    font-weight: 600;
+    position: absolute;
+    top: -20%;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+  /* line 685, src/sass/components/_general.scss */
+  footer#foot .cont button span {
+    font-weight: 200;
+  }
+  /* line 690, src/sass/components/_general.scss */
+  footer#foot .cont p {
+    width: 90%;
+    display: block;
+    color: #000;
+    margin: 0;
+    font-size: 3vw;
+    background: silver;
+    height: 4vh;
+    padding: 8vw 5vw;
+  }
+  /* line 700, src/sass/components/_general.scss */
+  footer#foot .cont img.footerImg {
+    display: block;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
   }
 }

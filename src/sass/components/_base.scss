@@ -3,17 +3,17 @@
 // Fonts
 
 @font-face {
-	font-family: ambi;
-	font-weight: 200;/*light*/
+	font-family: NarkisTam;
+	font-weight: 400;/*regular*/
 	font-style: normal;
-  src: url("../fonts/AlmoniDLAAA-Light.otf");
+  src: url("../fonts/NarkisTam-Medium_MFW.ttf");
 	// src: url("../fonts/ambi-tzar-light.woff")format('woff');
 }
 @font-face {
-	font-family: ambi;
-	font-weight: 400;/*regular*/
+	font-family: NarkisTam;
+	font-weight: 600;/*bold*/
 	font-style: normal;
-	src: url("../fonts/AlmoniDLAAA-Regular.ttf");
+	src: url("../fonts/NarkisTam-Bold_MFW.ttf");
 //   src: url("../fonts/ambi-tzar-regular.woff")format('woff');
   
   /* src: url("fonts/ambivalenti-regular-aaa.woff")format(woff);  */
