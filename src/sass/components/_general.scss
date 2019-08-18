@@ -1,0 +1,303 @@
+
+//desktop
+body{
+    direction: rtl;
+    width:100%;
+}
+
+
+section.welcome{
+    position: absolute;
+    top:0;
+    right:0;
+    height:100vh;
+    width:75%;
+    background:url('../images/desktop/welcome_bg.jpg');
+    display: flex;
+    .outer{
+        margin:0 auto;
+        text-align:center;
+    }
+}
+
+section.form{
+
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width:25%;
+    background:url('../images/desktop/form_bg.jpg');
+    .outer{
+        margin: 0 auto;
+        text-align: center;
+        margin-top:15vh;
+        .inner{
+            
+            font-size:1.2vw;
+            color:#fff;
+            margin: 0 auto;
+            text-align: center;
+            width: 65%;
+            form{
+                
+
+                input,select{
+                    border: 2px solid #fff;
+                    padding:5px 10px;
+                    outline:none;
+                    background:transparent;
+                    margin-bottom:1.5vh;
+                    color:#fff;
+                    width:100%;
+                    &::placeholder{
+                        color:#fff;
+                    }
+                }
+                .formSelectedCars{
+                    width:100%;
+                    h3{
+                        margin:0;
+                        margin-top:1vh;
+                        margin-bottom: 1.5vh;
+                        text-align:right;
+                    }
+                    .formCarsCont{
+                        display:flex;
+                        flex-flow: row wrap;
+                        .formSelectedCar{
+                            width:50%;
+                        
+                            .inner{
+                                width:95%;
+
+                                div{
+                                    width:100%;
+                                    background:lightgrey;
+                                    position: relative;
+                                    color:black;
+                                    margin-bottom:2vh;
+                                    font-size: 0.7vw;
+                                    padding: 0.6vh 0;
+                                    font-weight: bold;
+                                    border-radius: 15px;
+                                    a{
+                                        position: absolute;
+                                        width:0.5vw;
+                                        height: 0.5vw;
+                                        top: -0.7vh;
+                                        right: -0.7vh;
+                                        font-size: 0.5vw;
+                                        padding: 0.2vw;
+                                        border-radius: 100%;
+                                        background: #fff;
+                                        color: #000;     
+                                        text-decoration: none;
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    button{
+                        width:100%;
+                        background:blue;
+                        font-size:2vw;
+                        color:#fff;
+                        border:none;
+                        outline:none;
+                        margin-bottom: 1vh;
+                    }
+                    .checkbox{
+                        text-align:right;
+                        margin-bottom: 1vh;
+                        font-size: 0.70vw;
+                        padding-right: 1.2vw;
+                        text-indent: -0.6vw;
+                        a{
+                            text-decoration: none;
+                            color:#fff;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+section.carsSelection{
+    position: absolute;
+    right:0;
+    width:75%;
+    margin-top:100vh;
+    .selection{
+        width: 93%;
+        margin: 0 auto;
+        
+        &__head{
+            width:100%;
+            display:block;
+            margin:0 auto;
+            text-align:center;
+        }
+        .selectionCont{
+            display:flex;
+            justify-content: space-between;
+
+            .types{
+                width:50%;
+                display:flex;
+                justify-content: space-between;
+                flex-flow: row nowrap;
+                .type{
+                    width:6vw;
+                    height:6vw;
+                    background:lightblue;
+                    font-size:0.8vw;
+                }
+                .type-selected{
+                    background: tomato;
+                }
+            }
+
+            .brands{
+                width:40%;
+                display:flex;
+                justify-content: space-between;
+                flex-flow: row nowrap;
+                .brand{
+                    width:6vw;
+                    height:6vw;
+                    background:lightgrey;
+                    font-size:0.8vw;
+                }
+                .brand-selected{
+                    background:orangered;
+                }
+            }
+        }
+    }
+    .carSelectionHeader{
+        margin:0 auto;
+        text-align:center;
+        
+    }
+    .cars{
+        display: grid;
+        // grid-template-columns: repeat(4,22%);
+        grid-template-columns: repeat(auto-fill,minmax(22%,1fr));
+        // grid-auto-rows: max-content;
+        grid-gap:10px;
+        // grid-column-gap: 4%;
+        // grid-row-gap: 1.46vw;
+        width: 93%;
+        margin: 0 auto;
+        .car {
+            padding-top:100%;
+            box-sizing: border-box;
+            position: relative;
+
+            background-size: cover;
+            background-repeat: no-repeat !important;
+            background:orangered;
+            .content{
+                position: absolute;
+                top: 0;
+                right:0;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        
+    }
+
+}
+
+
+//mobile
+@media screen and (max-width: 768px) {
+
+    section.welcome{
+        width:100vw;
+        height:80vh;
+    }
+    section.form{
+        display:none;
+    }
+
+    section.carsSelection{
+        width:100%;
+        margin-top:80vh;
+        
+        .selection{
+            
+            width:90%;
+            .selectionCont{
+                display:block;
+
+                .types{
+                    margin-bottom: 1vh;
+                    width: 100%;
+                    display:flex;
+                    justify-content: space-between;
+                    flex-flow: row nowrap;
+
+                    .type{
+                        width:12vw;
+                        height:12vw;
+                        background:lightblue;
+                    }
+                    .type-selected{
+                        background: tomato;
+                    }
+                }
+
+                .brands{
+                    margin-bottom: 1vh;
+                    width: 100%;
+                    display:flex;
+                    justify-content: space-between;
+                    flex-flow: row nowrap;
+                    
+                    .brand{
+                        width:12vw;
+                        height:12vw;
+                        background:lightgrey;
+                    }
+                    .brand-selected{
+                        background:orangered;
+                    }
+
+                }
+            }
+        }
+        .cars{
+            width:100%;
+            display: grid;
+            // margin:0 auto;
+            // justify-content: space-between;
+            grid-template-columns: repeat(2,1fr);
+            grid-column-gap: 1vw;
+            grid-row-gap: 1vw;
+            .car {
+                // grid-area: 
+                // width:46vw;
+                height:46vw;
+                background:orangered;
+                &:nth-child(odd){
+                   
+                }
+                &:nth-child(even){
+                    background:pink;
+                }
+                
+            }
+            
+        }
+        
+    }
+
+
+}

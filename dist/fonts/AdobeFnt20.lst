@@ -1,0 +1,66 @@
+%!Adobe-FontList 1.20
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AlmoniDLAAA-Bold
+FamilyName:Almoni DL AAA
+StyleName:Bold
+FullName:Almoni DL AAA Bold
+MenuName:Almoni DL AAA
+StyleBits:2
+FamilyNameNative:Almoni DL AAA
+StyleNameNative:Bold
+FullNameNative:Almoni DL AAA Bold
+WritingScript:Hebrew
+OutlineFileName:D:\Dropbox (KStudio)\KStudio Team Folder\studio\Metropolis\@brand\SAFA_hadasha\90108087_metropolis 4x3 Folder\Document fonts\AlmoniDLAAA-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:53288
+FileModTime:1559630504
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Almoni DL AAA Bold
+NameArray:0,Win,1,Almoni DL AAA
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:AlmoniDLAAA-Light
+FamilyName:Almoni DL AAA
+StyleName:Light
+FullName:Almoni DL AAA Light
+MenuName:Almoni DL AAA
+StyleBits:0
+FamilyNameNative:Almoni DL AAA
+StyleNameNative:Light
+FullNameNative:Almoni DL AAA Light
+WritingScript:Hebrew
+OutlineFileName:D:\Dropbox (KStudio)\KStudio Team Folder\studio\Metropolis\@brand\SAFA_hadasha\90108087_metropolis 4x3 Folder\Document fonts\AlmoniDLAAA-Light.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:50404
+FileModTime:1559630504
+WeightClass:300
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Almoni DL AAA Light
+NameArray:0,Win,1,Almoni DL AAA
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\Dropbox (KStudio)\KStudio Team Folder\studio\Metropolis\@brand\SAFA_hadasha\90108087_metropolis 4x3 Folder\Document fonts\HelveticaNeue-Medium.dfont
+FileModTime:1559630478
+%EndFont
+
