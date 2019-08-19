@@ -131,6 +131,26 @@ $( document ).ready((function() {
 
         //-- usage --//
         preload(
+          "images/desktop/buttons/compact_BTN.jpg",
+          "images/desktop/buttons/compact_BTN_blue.jpg",
+          "images/desktop/buttons/family_BTN.jpg",
+          "images/desktop/buttons/family_BTN_blue.jpg",
+          "images/desktop/buttons/suv_BTN.jpg",
+          "images/desktop/buttons/suv_BTN_blue.jpg",
+          "images/desktop/buttons/managers_BTN.jpg",
+          "images/desktop/buttons/managers_BTN_blue.jpg",
+          "images/desktop/buttons/sport_BTN.jpg",
+          "images/desktop/buttons/sport_BTN_blue.jpg",
+          "images/desktop/buttons/audi_BTN.jpg",
+          "images/desktop/buttons/audi_BTN_blue.jpg",
+          "images/desktop/buttons/skoda_BTN.jpg",
+          "images/desktop/buttons/skoda_BTN_blue.jpg",
+          "images/desktop/buttons/seat_BTN.jpg",
+          "images/desktop/buttons/seat_BTN_blue.jpg",
+          "images/desktop/buttons/vw_BTN.jpg",
+          "images/desktop/buttons/vw_BTN_blue.jpg"
+
+        
             // "images/desktop/bg.webp",
             // "images/desktop/bg.jpf"
             // "images/desktop/bg.jpg"

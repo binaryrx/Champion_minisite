@@ -220,11 +220,11 @@
           <!-- SELECT CAR TYPE -->
           <div class="selectionCont">
             <div class="selection__types types">
-              <div class="type type--1 compact" data-car-type="compact"><span class="mobile">קומפקטית</span></div>
-              <div class="type type--2 family" data-car-type="family"><span class="mobile">משפחתית</span></div>
-              <div class="type type--3 suv" data-car-type="suv"><span class="mobile">SUV</span></div>
-              <div class="type type--4 manager" data-car-type="manager"><span class="mobile">מנהלים</span></div>
-              <div class="type type--5 sport" data-car-type="sport"><span class="mobile">ספורט</span></div>
+              <div class="type type--1 compact" data-car-type="compact"></div>
+              <div class="type type--2 family" data-car-type="family"></div>
+              <div class="type type--3 suv" data-car-type="suv"></div>
+              <div class="type type--4 manager" data-car-type="manager"></div>
+              <div class="type type--5 sport" data-car-type="sport"></div>
             </div>
 
             <!-- SELECT BRAND -->
