@@ -1,47 +1,23 @@
-// //browser detect
-
-// // Opera 8.0+
-// var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-// // Firefox 1.0+
-// var isFirefox = typeof InstallTrigger !== 'undefined';
-
-// // Safari 3.0+ "[object HTMLElementConstructor]" 
-// var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
-
-// // Internet Explorer 6-11
-// var isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-// // Edge 20+
-// var isEdge = !isIE && !!window.StyleMedia;
-
-// // Chrome 1 - 71
-// var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-// // Blink engine detection
-// var isBlink = (isChrome || isOpera) && !!window.CSS;
-
-
 //  ES6
-
-
-
-
-
  //add css to car class.
- var cars = $('.car');
-//  var cars = document.getElementsByClassName('car');
- function addBgStyle(element){
-  element.style.backgroundSize = 'contain';
- }
- cars.each(function(){
-  addBgStyle(this);
- });
+    var cars = $('.car');
+    var carTypes = $('.type');
+    var brands =  $('.brand');
+    var removeSelection = $('.removeSelection');
 
-   //select all the filter buttons
-   var carTypes = $('.type');
-   var brands =  $('.brand');
-   //console log the clicked type
+
+
+    function addBgStyle(element){
+      element.style.backgroundSize = 'contain';
+    }
+    cars.each(function(){
+      addBgStyle(this);
+    });
+
+
+  
+
+   //console log the clicked type + toggle the class type-selected
    function typeFilter(target){
      const targetType = target;
      console.log(targetType);
@@ -76,6 +52,123 @@
      brandFilter(target);
     })
   })
+
+  function carSelect(target){
+    const targetCar = target;
+    // console.log(targetCar);
+    const element = document.querySelector(`div[data-car-name="${targetCar}"]`);
+    element.classList.toggle('car-selected');
+  }
+
+  function addToSelectedCar(carName){
+    var carName = carName;
+    var divFormSelectedCar = document.createElement('div');
+    var divInner = document.createElement('div');
+    var div = document.createElement('div');
+
+    divFormSelectedCar.className = 'formSelectedCar selected_'+ carName;;
+    divFormSelectedCar.id = carName;
+    divInner.className = 'inner';
+    div.innerText = carName;
+
+    var a = document.createElement('a');
+    var img = document.createElement('img');
+
+    a.className = 'removeSelection';
+    a.onclick = function(){
+      var target = $(this).parent().parent().parent()[0]
+      var targetID = $(this).parent().parent().parent()[0].id;
+      var element = $(`div[data-car-name="${targetID}"]`);
+
+      target.remove();
+      element.removeClass('car-selected');
+
+      console.log(target);
+      console.log(targetID);
+
+      
+    };
+
+    img.src  = 'images/desktop/X_icon.png';
+  
+    a.appendChild(img);
+    div.appendChild(a);
+    divInner.appendChild(div);
+    divFormSelectedCar.appendChild(divInner);
+    document.getElementById('formCars').appendChild(divFormSelectedCar);
+  }
+
+
+  function removeFromSelectedCars(carName){
+    console.log(carName);
+    selectedCar = document.getElementsByClassName('selected_'+carName)[0];
+    if(selectedCar){
+      console.log('true')
+      selectedCar.remove();
+    }else{
+      console.log('false')
+      selectedCar.remove();
+    // console.log(selectedCar);
+    }
+  }
+
+
+
+
+ 
+  removeSelection.each(function(){
+    $(this).click(function(){
+      var targetElem = $(this).parent().parent().parent();
+      console.log(targetElem);
+      targetElem.remove();
+    });
+  });
+  
+  function removeMe(){
+    console.log(this);
+  }
+ 
+  
+
+  cars.each(function(){
+    $(this).click(function(event){
+      var formSelectedCar = $('.formSelectedCar');
+      console.log(formSelectedCar.length)
+      var targetDiv = event.target;
+      var target = event.target.dataset.carName;
+      // var img = document.createElement('img'); 
+      // img.src = "images/mobile/blue_v.png";
+      // img.style = "position: absolute;top: 50%;width: 40%;right: 50%;transform: translate(50%,-80%)";
+      // img.classList = 'blue_v';
+
+      //append car to list
+      if(formSelectedCar.length == 0){
+        carSelect(target);
+        addToSelectedCar(target);
+        //if more than 4 cars, remove last show error + remove last selection
+      }else if(formSelectedCar.length >= 4){
+        $('.error').fadeIn();
+        $(this).removeClass('car-selected');
+        removeFromSelectedCars(target)
+        // $('.error').fadeOut();
+      }else{
+        if( $(this).hasClass('car-selected') ){
+          $(this).removeClass('car-selected');
+          removeFromSelectedCars(target)
+        }else{
+          carSelect(target);
+          addToSelectedCar(target);
+          
+        }
+      }
+
+      
+
+      
+      
+    });
+    
+  });
   //  Array.from(brands).forEach(brand => brand.addEventListener('click',brandFilter));
 
 

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 // window.location.reload(true);
 //Listen to the resize event
 window.addEventListener('resize',function(){
@@ -18,38 +12,6 @@ document.documentElement.style.setProperty('--vh',vh)
 
 $( document ).ready(function() {
 
-  // $(".fancybox").fancybox({
-  //   padding:0,
-  //   helpers: {
-  //     overlay: {
-  //       locked :false
-  //     }
-  //   }
-  // });
-  // $.fancybox.defaults.hideScrollbar = false;
-  // $.fancybox.defaults.autoFocus = false;
-
-  // $(document).on('click', 'a', function (e) {
-  //   if ($(this).attr('href') == '#secondBg') {
-  //       // e.preventDefault();
-  //       var url = window.location.toString();
-  //       //Remove anchor from url using the split
-  //       url = url.split("#")[0];
-        
-  //   }
-  // });
-
-
-    // Carousel //
-    $(".owl-carousel").owlCarousel({
-      lazyLoad:true,
-      items: 1,
-      loop:true,
-      autoplay:true,
-      navigation:true, 
-
-    });
-
     //Change background on mobile threshold.
     var x = window.matchMedia("(max-width: 768px)")
    
@@ -63,26 +25,72 @@ $( document ).ready(function() {
       }
     }
     DeviceFormDetect(x);
+
+    var images = [];
+
+    //define image preloading function
+    function preload() {
+        for (var i = 0; i < arguments.length; i++) {
+            images[i] = new Image();
+            images[i].crossOrigin="anonymous";
+            images[i].src = preload.arguments[i];
+        }
+        // console.log(images);
+    }
+        //-- usage --//
+    preload(
+      "images/desktop/buttons/compact_BTN_blue.jpg",
+      "images/desktop/buttons/family_BTN_blue.jpg",
+      "images/desktop/buttons/suv_BTN_blue.jpg",
+      "images/desktop/buttons/managers_BTN_blue.jpg",
+      "images/desktop/buttons/sport_BTN_blue.jpg",
+      "images/desktop/buttons/audi_BTN_blue.jpg",
+      "images/desktop/buttons/skoda_BTN_blue.jpg",
+      "images/desktop/buttons/seat_BTN_blue.jpg",
+      "images/desktop/buttons/vw_BTN_blue.jpg"
+    )
+
+    //                  //
+    // checkbox logic   //
+    //                  //
+
+    $('#checkme').attr("checked" , true);
+
+    $('#checkme').val('כן');
+    
+    $('.checkbox').on('click',function(){
+
+    //   console.log('clicked');
+      if($('#checkme').attr('checked')){
+        $('#checkme').attr("checked" , false);
+        $('#checkme').val('לא');
+      }else{
+        $('#checkme').attr("checked" , true);
+        $('#checkme').val('כן');
+      }
+    });
   
+    //do things if mobile or desktop
     function myFunction(x) {
       if (x.matches) { // If media query matches
 
-        
+        //mobile
 
-      // console.log(elementPosition('.service:last-child'));
-        
-        $('.downArrow').click(function(){
-          // console.log('hayyy');
-          var header = $('#myHeader').height();
+
+        // $('.downArrow').click(function(){
+          // var header = $('#myHeader').height();
           // var jumpHere = $('#jumpHere').offset().top;
-          backgroundBg = $('#secondBg').offset().top;
-          var offset = backgroundBg - header;
-          $('html, body').animate({scrollTop: offset +2}, '500','swing');
+          // backgroundBg = $('#secondBg').offset().top;
+          // var offset = backgroundBg - header;
+          // $('html, body').animate({scrollTop: offset +2}, '500','swing');
 
-        });
+        // });
 
 
       } else {
+
+        //desktop
+
         // please note, 
         // that IE11 now returns undefined again for window.chrome
         // and new Opera 30 outputs true for window.chrome
@@ -105,80 +113,23 @@ $( document ).ready(function() {
           vendorName === "Google Inc." &&
           isOpera === false &&
           isIEedge === false
-        ) {
-
-        } else { 
-
+        ){
+          // Run Code
         }
                 
-        var images = [];
-        function preload() {
-            for (var i = 0; i < arguments.length; i++) {
-                images[i] = new Image();
-                images[i].crossOrigin="anonymous";
-                images[i].src = preload.arguments[i];
-            }
-        }
         
-
-        //-- usage --//
-        preload(
-          "images/desktop/buttons/compact_BTN.jpg",
-          "images/desktop/buttons/compact_BTN_blue.jpg",
-          "images/desktop/buttons/family_BTN.jpg",
-          "images/desktop/buttons/family_BTN_blue.jpg",
-          "images/desktop/buttons/suv_BTN.jpg",
-          "images/desktop/buttons/suv_BTN_blue.jpg",
-          "images/desktop/buttons/managers_BTN.jpg",
-          "images/desktop/buttons/managers_BTN_blue.jpg",
-          "images/desktop/buttons/sport_BTN.jpg",
-          "images/desktop/buttons/sport_BTN_blue.jpg",
-          "images/desktop/buttons/audi_BTN.jpg",
-          "images/desktop/buttons/audi_BTN_blue.jpg",
-          "images/desktop/buttons/skoda_BTN.jpg",
-          "images/desktop/buttons/skoda_BTN_blue.jpg",
-          "images/desktop/buttons/seat_BTN.jpg",
-          "images/desktop/buttons/seat_BTN_blue.jpg",
-          "images/desktop/buttons/vw_BTN.jpg",
-          "images/desktop/buttons/vw_BTN_blue.jpg"
-
-        
-            // "images/desktop/bg.webp",
-            // "images/desktop/bg.jpf"
-            // "images/desktop/bg.jpg"
-        )
 
       }
     }
 
+      
       x.addListener(myFunction)
 
       myFunction(x)//trigger
-  
 
-      var divId;
-
-      
   
-   
   
-    //                  //
-    // checkbox logic   //
-    //                  //
-  
-    $('#checkme').attr("checked" , false);
-
-    $('#checkme').val(2);
-    $('.checkbox').on('click',function(){
-    //   console.log('clicked');
-      if($('#checkme').attr('checked')){
-        $('#checkme').attr("checked" , false);
-        $('#checkme').val(2);
-      }else{
-        $('#checkme').attr("checked" , true);
-        $('#checkme').val(0);
-      }
-    });
+    
 
 
     // Open/Close form mobile
@@ -238,6 +189,11 @@ var utm_campaign = urlParams['utm_campaign'] || '';
 var utm_content = urlParams['utm_content'] || '';
 var utm_term = urlParams['utm_term'] || '';
 
+var carString = [];
+
+// var newsletter = urlParams['newsletter'] || 'לא';
+// var newsletter = urlParams['privacy'] || 'לא';
+
 var checkbox = $('input[type="checkbox"]');
 checkbox.val('לא');
 checkbox.on('change', function(){
@@ -245,21 +201,47 @@ checkbox.on('change', function(){
     else $(this).val('לא');
 });
 
+
 var x = window.matchMedia("(max-width: 768px)")
+
+ $('#sendME').on('click',function(e){
+  var selectedCars = document.getElementsByClassName('formSelectedCar');
+
+  for(i=0;i<selectedCars.length;i++){
+    
+    carString.push(selectedCars[i].id);  
+  }
+  carString = carString.join(',');
+  carArr = carString.toString();
+  console.log(carString);
+  console.log(carArr);
+  
+  // carString = 'רכבים:' + carString;
+  return carString;
+});
+
+
+
+
+
 
 
 
 
 // send to lider
 function sendLead(destinationUrl,method,device){
-  $('form').on('click',function(e){
-    // e.preventDefault();
-  });
 
+  $('#mainForm').on('click',function(e){
+    // e.preventDefault();
+
+  });
+    
     var str = $('form').serialize();  
     var pieces = str.split('=');
     var res = pieces.toString().replace(/&/g, "");
     var arr = res.split(',');
+
+    
     // console.log(arr);
     // // console.log(arr[0]);
     // // console.log(arr[1]);
@@ -288,9 +270,11 @@ function sendLead(destinationUrl,method,device){
     .addParam({name: 'reffo', value: document.location.href})
     .addParam({name: 'reffo2', value: document.referrer})
     .addParam({name: 'from', value: device})
-    .addParam({name: 'campaignId', value: 921 })
-    .addParam({name: 'ProjectID', value: 7003 })
-    .addParam({name: 'Password', value: 'zxc080819' })
+    .addParam({name: 'cars_selected', value: carString})
+    .addParam({name: 'cars_arr', value: carArr})
+    // .addParam({name: 'campaignId', value: 921 })
+    // .addParam({name: 'ProjectID', value: 7003 })
+    // .addParam({name: 'Password', value: 'zxc080819' })
     .addParam({name: 'MediaTitle ', value: utm_source })
     
     crm.addValidation('number', function(value) {
@@ -307,24 +291,14 @@ window.mobilecheck = function() {
   return check;
 };
 
-// $(window).resize(function(){
-  if(window.mobilecheck()){
-    // sendLead('https://k.co.il/lider/savej','GET','mobile');
-
-  }else{
-    // sendLead('https://k.co.il/lider/savej','GET','desktop');
-
-  }
-// });
 
 
-// if(x.matches){
-//   sendLead('http://lider.k.co.il/savej','GET','mobile');
-//   sendLeadBmby('http://www.bmby.com/shared/AddClient/index.php/','mobile');
-// }else{
-//   sendLead('http://lider.k.co.il/savej','GET','desktop');
-//   sendLeadBmby('http://www.bmby.com/shared/AddClient/index.php/','desktop');
-// }
+
+if(x.matches){
+  sendLead('https://lider.k.co.il/savej','GET','mobile');
+}else{
+  sendLead('https://lider.k.co.il/savej','GET','desktop');
+}
 
 
 

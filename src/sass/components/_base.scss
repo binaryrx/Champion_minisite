@@ -63,6 +63,13 @@ a:target {
 .block{
 	display:block;
 }
+.error{
+	color:red;
+	display:none;
+	position: relative;
+    margin-top: -2vh;
+    margin-bottom: 2vh;
+}
 
 // .owl-lazy{
 	

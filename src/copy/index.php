@@ -9,13 +9,13 @@
     <!-- <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self';
      script-src 'unsafe-inline' 'self' https://code.jquery.com/ https://www.googletagmanager.com/ https://kit.fontawesome.com/ https://www.google-analytics.com/ https://www.googleadservices.com/ https://connect.facebook.net/ https://211412.tctm.co/t https://googleads.g.doubleclick.net/ https://facebook.com/ https://google.com/ https://google.co.il/ https://211412.tctm.co/t.js https://k.co.il/ https://www.bmby.com/; 
      connect-src 'self' https://211412.tctm.co/x.json;
      img-src 'self' https://www.google.com/ https://www.google-analytics.com/ https://www.facebook.com/ https://www.google.co.il/ https://googleads.g.doubleclick.net/;
      style-src 'unsafe-inline' 'self' https://netdna.bootstrapcdn.com/;
      style-src-elem 'self' https://kit-free.fontawesome.com https://netdna.bootstrapcdn.com/  ;
-     font-src 'self' https://netdna.bootstrapcdn.com/ https://kit-free.fontawesome.com/;">
+     font-src 'self' https://netdna.bootstrapcdn.com/ https://kit-free.fontawesome.com/;"> -->
     
 
     <!-- Add jQuery -->
@@ -128,11 +128,13 @@
        <div class="outer">
          <div class="inner">
            <h2>לתיאום פגישה</h2>
-           <form action="">
-             <input type="text" placeholder="שם פרטי">
-             <input type="text" placeholder="שם שם משפחה">
-             <input type="text" placeholder="שם טלפון">
-             <input type="text" placeholder='דוא"ל'>
+           <!-- <form action=""> -->
+           <form novalidate="novalidate" id="mainForm" method="GET">
+           <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" validation="text" required>
+           <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" validation="text" required>
+           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" validation="israelPhone" required>
+             
+             <input class="input lastInp" type="email" name="Email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' validation="email" required>
 
              <!-- brand select -->
              <select name="brand" id="">
@@ -146,42 +148,22 @@
              <!-- Selected cars from car selector -->
              <div class="formSelectedCars">
                 <h3>הרכבים שבחרתי</h3>
-                <div class="formCarsCont">
-                    <div class="formSelectedCar">
+                <div class="formCarsCont" id="formCars">
+
+                    <!-- <div class="formSelectedCar">
                       <div class="inner">
-                        <div>SKODA NEW SUPERB
-                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                    <div class="formSelectedCar">
-                      <div class="inner">
-                        <div>AUDI Q5 
-                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
-                        </div>
-                        
-                      </div>
-                    </div>
-                    <div class="formSelectedCar">
-                      <div class="inner">
-                        <div>Audi A1
-                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
+                        <div>
+                          SKODA NEW SUPERB
+                          <a class="removeSelection"><img src="images/desktop/X_icon.png" alt=""></a>
                         </div>
                       </div>
-                    </div>
-                    <div class="formSelectedCar">
-                      <div class="inner">
-                        <div>Skoda Kodiaq
-                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
-                        </div>
-                      </div>
-                    </div>
+                    </div> -->
+
                 </div>
-                <button>שלח ></button>
+                <button id="sendME">שלח ></button>
                 <div class="checkbox">
-                  <input type="checkbox" name="privacy" class="privacy" id="privacy-footer" checked="" >
-                  <label for="privacy-footer" >מסכים 
+                  <input type="checkbox" name="privacy" id="checkme" class="privacy" value='כן'  checked>
+            <label for="privacy" style="direction: rtl" class="container">מסכים 
                     <a href="https://www.skoda.co.il/terms-of-use/" target="_blank" >
                     למדיניות הפרטיות
                     </a>
@@ -241,6 +223,7 @@
 
         <div class="carSelectionHeader">
           <h2>לחצו על הדגמים לבחירה</h2>
+          <div class='error'>ניתן לסמן עד 4 רכבים</div>
         </div>
 
         <div class="selection__cars cars">
@@ -248,43 +231,44 @@
           <!-- REQUESTED STARTING CARS  -->
           
           <!-- FAMILY -->
-            <div class="car" data-car-name="octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
+            <div class="car" data-car-name="Skoda Octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
+     
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
+            <div class="car" data-car-name="VW Golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="a3" style="background:url('images/cars_bg/audi_a3.jpg') ">
+            <div class="car" data-car-name="Audi A3" style="background:url('images/cars_bg/audi_a3.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
+            <div class="car" data-car-name="Seat Leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
 
             <!-- SUV -->
-            <div class="car" data-car-name="kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
+            <div class="car" data-car-name="Skoda Kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
+            <div class="car" data-car-name="VW Tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
+            <div class="car" data-car-name="Audi Q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
+            <div class="car" data-car-name="Seat Ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
 
             <!-- Managers -->
-            <div class="car" data-car-name="superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
+            <div class="car" data-car-name="Skoda Superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
@@ -292,25 +276,25 @@
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             <!-- </div> -->
 
-            <div class="car" data-car-name="a4" style="background:url('images/cars_bg/audi_a4.jpg') ">
+            <div class="car" data-car-name="Audi A4" style="background:url('images/cars_bg/audi_a4.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
 
             <!-- Compact -->
-            <div class="car" data-car-name="fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
+            <div class="car" data-car-name="Skoda Fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
               <!-- <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div> -->
             </div>
 
-            <div class="car" data-car-name="polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
+            <div class="car" data-car-name="VW Polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
               <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="a1" style="background:url('images/cars_bg/audi_a1.jpg') ">
+            <div class="car" data-car-name="Audi A1" style="background:url('images/cars_bg/audi_a1.jpg') ">
             <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
             </div>
 
-            <div class="car" data-car-name="ibiza" style="background:url('images/cars_bg/seat_ibiza.jpg') ">
+            <div class="car" data-car-name="Seat Ibiza" style="background:url('images/cars_bg/seat_ibiza.jpg') ">
             <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
             </div>
 
