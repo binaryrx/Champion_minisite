@@ -61,43 +61,22 @@ $( document ).ready((function() {
     //Change background on mobile threshold.
     var x = window.matchMedia("(max-width: 768px)")
    
-    
+    function DeviceFormDetect(x){
+      if(x.matches){
+        console.log('mobile');
+      }else{
+        console.log('desktop');
+        $('section.form').removeClass('open');
+        $('section.form').addClass('block');
+      }
+    }
+    DeviceFormDetect(x);
   
     function myFunction(x) {
       if (x.matches) { // If media query matches
-        // $('.dBg1').attr('data-src','images/mobile/mobile_bg.jpg');
-        // $('#bg1').attr('data-src','images/mobile/mobile_bg.jpg');
-        // $('#bg1').css('background-image','url(images/mobile/mobile_bg.jpg)');
 
+        
 
-        // $('.bg1').attr('data-src','images/mobile/mobile_bg.jpg');
-        // $('.bg1').css('background-image','url(images/mobile/mobile_bg.jpg)');
-        // $('.bg2').css('background-image','url(images/mobile/mobile_bg2.jpg)');
-        // $('.bg3').css('background-image','url(images/mobile/mobile_bg3.jpg)');
-        // $('.bg4').css('background-image','url(images/mobile/mobile_bg4.jpg)');
-        // $('.bg2').attr('data-src','images/mobile/mobile_bg2.jpg');
-        // $('.bg3').attr('data-src','images/mobile/mobile_bg3.jpg');
-        // $('.bg4').attr('data-src','images/mobile/mobile_bg4.jpg');
-
-
-        // $('.dBg1').css('background-image','url(images/mobile/mobile_bg.jpg)');
-
-        $('#submit').on('click',(function(){
-          $('.background').addClass('thanku');
-          $('.formHead').css('display','none');
-        }));
-
-        var elementPosition = function(idClass) {
-          var element = $(idClass);
-          var offset = element.offset();
-
-          return {
-              'top': offset.top,
-              'right': offset.left + element.outerWidth(),
-              'bottom': offset.top + element.outerHeight(),
-              'left': offset.left,
-          };
-      };
       // console.log(elementPosition('.service:last-child'));
         
         $('.downArrow').click((function(){
@@ -135,19 +114,9 @@ $( document ).ready((function() {
           isOpera === false &&
           isIEedge === false
         ) {
-          // $('.bg1').css('background-image','url(images/desktop/bg.jpg),url(images/desktop/bg.jpf),url(images/desktop/bg.webp)');
-          // $('.bg1').css('background-image','url(images/desktop/bg.webp),url(images/desktop/bg.jpf)');
-          // $('.bg2').css('background-image','url(images/desktop/bg2.jpg),url(images/desktop/bg2.jpf),url(images/desktop/bg2.webp)');
-          // $('.bg2').css('background-image','url(images/desktop/bg2.webp),url(images/desktop/bg2.jpf)');
-          // $('.bg3').css('background-image','url(images/desktop/bg3.jpg),url(images/desktop/bg3.jpf),url(images/desktop/bg3.webp)');
-          // $('.bg3').css('background-image','url(images/desktop/bg3.webp),url(images/desktop/bg3.jpf)');
-          // $('.bg4').css('background-image','url(images/desktop/bg4.jpg),url(images/desktop/bg4.jpf),url(images/desktop/bg4.webp)');
-          // $('.bg4').css('background-image','url(images/desktop/bg4.webp),url(images/desktop/bg4.jpf)');
+
         } else { 
-          // $('.bg1').css('background-image','url(images/desktop/bg.webp),url(images/desktop/bg.jpf),url(images/desktop/bg.jpg)');
-          // $('.bg2').css('background-image','url(images/desktop/bg2.webp),url(images/desktop/bg2.jpf),url(images/desktop/bg2.jpg)');
-          // $('.bg3').css('background-image','url(images/desktop/bg3.webp),url(images/desktop/bg3.jpf),url(images/desktop/bg3.jpg)');
-          // $('.bg4').css('background-image','url(images/desktop/bg4.webp),url(images/desktop/bg4.jpf),url(images/desktop/bg4.jpg)');
+
         }
                 
         var images = [];
@@ -166,22 +135,6 @@ $( document ).ready((function() {
             // "images/desktop/bg.jpf"
             // "images/desktop/bg.jpg"
         )
-
-        // $('.bg1').css('background-image','url(images/desktop/bg.webp),url(images/desktop/bg.jpf),url(images/desktop/bg.jpg)');
-        // $('.bg2').css('background-image','url(images/desktop/bg2.webp),url(images/desktop/bg2.jpf),url(images/desktop/bg2.jpg)');
-        // $('.bg3').css('background-image','url(images/desktop/bg3.webp),url(images/desktop/bg3.jpf),url(images/desktop/bg3.jpg)');
-        // $('.bg4').css('background-image','url(images/desktop/bg4.webp),url(images/desktop/bg4.jpf),url(images/desktop/bg4.jpg)');
-
-
-        $('.background').removeClass('thanku');
-        // $('.formHead').css('display','block');
-
-
-        $('.downArrow').click((function(){
-          // console.log('hayyy');
-          positionabout = $('#secondBg').offset().top - $('#myHeader').height() ; // Position of #about - nav height = correct position
-          $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
-        }));
 
       }
     }
@@ -218,17 +171,19 @@ $( document ).ready((function() {
 
     // Open/Close form mobile
 
-    $('#sendForm').on('click',(function(){
-        // console.log('clicked');
-        $('#mobileFooter').fadeOut();
-        $('#form').removeClass('hideform');
-        $('#form').fadeIn();
+    $('#openForm').on('click',(function(){
+      $('section.welcome').fadeOut();
+      $('section.form').fadeIn();
+      $('section.form').addClass('open');
+      $('section#carSelect').fadeOut();
     }));
-    $('.close').on('click',(function(){
-        // console.log('clicked');
-        $('#mobileFooter').fadeIn();
-        $('#form').removeClass('showform');
-        $('#form').fadeOut();
+
+    $('#closeForm').on('click',(function(){
+    
+      $('section#carSelect').fadeIn();
+      $('section.welcome').fadeIn();
+      $('section.form').fadeOut();
+   
     }));
 
 }));
