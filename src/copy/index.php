@@ -36,8 +36,9 @@
     <!-- Add favicon -->
     <!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
     <!-- preload -->
-    <link rel="preload" href="fonts/NarkisTam-Medium_MFW.ttf" as="font" crossorigin=anonymous>
-    <link rel="preload" href="fonts/NarkisTam-Bold_MFW.ttf" as="font" crossorigin=anonymous>
+    <link rel="preload" href="fonts/VWHebrew-Light.otf" as="font" crossorigin=anonymous>
+    <link rel="preload" href="fonts/VWHebrew-Regular.otf" as="font" crossorigin=anonymous>
+    <link rel="preload" href="fonts/VWHebrew-Bold.otf" as="font" crossorigin=anonymous>
     <!-- <link rel="preload" href="images/desktop/bg.webp" as="image" crossorigin=anonymous> -->
   
   <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -45,12 +46,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141535915-1"></script>
 
   <!-- Jtag -->
-  <script async src="js/gtag.min.js"></script>
+  <script async src="js/gtag.js"></script>
 
   <!-- Google Tag Manager -->
-  <script src="js/gtm.js">
-
-  </script>
+  <script async src="js/gtm.js"></script>
+  <script async src="js/ga.js"> </script>
+  
   
 
 <!-- <script> -->
@@ -65,42 +66,49 @@
 
 
   <body>
+    
       
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVQ73SS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2VTNF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
     <main>
 
     <!-- TOP WELCOME SECTION -->
       <section class="welcome">
         <div class="outer">
+          <img src="images/desktop/champion_logo.png" alt="" class="champ_logo">
           <div class="inner">
-            <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
-            <h2 class="desktop"><span>___</span> <span>11-13 בספטמבר </span><span>___</span></h2>
-            <img src="images/desktop/cars_logos_white.png" alt="">
-            <h3 class="subTxt">מותגי הרכב המובילים בעולם בהטבות שאסור לפספס</h3>
-            <h2 class="mobile"><div></div>11-13 בספטמבר</h2>
-          </div>
+            
+            <img src="images/desktop/sun_desktop.png" alt="" class="desktop sun">
+            <div class="textCont">
+              <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
+              <h2 class="desktop"><span></span> <span>&nbsp;&nbsp;11-13 בספטמבר&nbsp;&nbsp;</span><span></span></h2>
+              <img src="images/desktop/cars_logos_white.png" alt="">
+              <h3 class="subTxt">מותגי הרכב המובילים בעולם בהטבות שאסור לפספס</h3>
+              <h2 class="mobile"><div></div>11-13 בספטמבר</h2>
+           
 
-          <div class="buttons desktop downArrow" >
-            <a href="#carSelect" >
-              <span>לצפייה בדגמים</span>              
-              <img src="images/desktop/arrows.png" alt="">
-            </a>
+              <div class="buttons desktop downArrow" >
+                <a href="#carSelect" >
+                  <span>לצפייה בדגמים</span>              
+                  <img src="images/desktop/arrows.png" alt="">
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="buttons mobile">
 
-            <button class="btn btn--secondary">להשארת פרטים
+            <button class="btn btn--secondary" id="openForm">להשארת פרטים
               <img src="images/mobile/triangle.png" alt="">
             </button>
 
-            <button class="btn btn--secondary">לשיחה עם נציג
+            <button id="callme" class="btn btn--secondary" onclick="document.location.href = 'tel:972508907997'">  לשיחה עם נציג
             <img src="images/mobile/phone_icon.png" alt="">
             </button>
-            
+
           </div>
 
           <div class="legal mobile">
@@ -113,7 +121,10 @@
 
       </section>
 
-      <section class="form">
+      <section class="form" id="form">
+      <img src="images/desktop/champion_logo.png" alt="" class="champ_logo mobile">
+      <img src="images/mobile/X_icon.png" alt="" id="closeForm" class="close mobile">
+
        <div class="outer">
          <div class="inner">
            <h2>לתיאום פגישה</h2>
@@ -139,7 +150,7 @@
                     <div class="formSelectedCar">
                       <div class="inner">
                         <div>SKODA NEW SUPERB
-                        <a href="#">X</a>
+                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
                         </div>
                         
                       </div>
@@ -147,7 +158,7 @@
                     <div class="formSelectedCar">
                       <div class="inner">
                         <div>AUDI Q5 
-                          <a href="#">X</a>
+                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
                         </div>
                         
                       </div>
@@ -155,14 +166,14 @@
                     <div class="formSelectedCar">
                       <div class="inner">
                         <div>Audi A1
-                        <a href="#">X</a>
+                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
                         </div>
                       </div>
                     </div>
                     <div class="formSelectedCar">
                       <div class="inner">
                         <div>Skoda Kodiaq
-                        <a href="#">X</a>
+                        <a href="#"><img src="images/desktop/X_icon.png" alt=""></a>
                         </div>
                       </div>
                     </div>
@@ -183,7 +194,12 @@
                   <label for="newsletter-footer">מאשר קבלת מידע שיווקי, הצעות למוצרים ו/או שירותים מצ'מפיון מוטורס במייל וב-sms</label></div>
              </div>
 
-
+             <div class="legal desktop">
+               <h3>לשיחה עם נציג: 6672*</h3>
+            <a href="#">דרגות זיהום ובטיחות</a>
+            <span>&nbsp;|&nbsp; </span>
+            <a href="#">הערות משפטיות</a>
+          </div>
 
            </form>
          </div>
@@ -198,17 +214,17 @@
           <!-- Instructions , head -->
           <div class="selection__head">
             <h3>בחרו את הדגמים המועדפים עליכם</h3>
-            <p><strong>סמנו קטגוריה/יות או מותג/ים</strong> ובחרו את הדגמים המועדפים עליכם</p>
+            <p>סמנו קטגוריה/ות ומותג/ים</p>
           </div>
 
           <!-- SELECT CAR TYPE -->
           <div class="selectionCont">
             <div class="selection__types types">
-              <div class="type type--1 compact" data-car-type="compact"><span class="mobile">קומפקטית</span></div>
-              <div class="type type--2 family" data-car-type="family"><span class="mobile">משפחתית</span></div>
-              <div class="type type--3 suv" data-car-type="suv"><span class="mobile">SUV</span></div>
-              <div class="type type--4 manager" data-car-type="manager"><span class="mobile">מנהלים</span></div>
-              <div class="type type--5 sport" data-car-type="sport"><span class="mobile">ספורט</span></div>
+              <div class="type type--1 compact" data-car-type="compact"></div>
+              <div class="type type--2 family" data-car-type="family"></div>
+              <div class="type type--3 suv" data-car-type="suv"></div>
+              <div class="type type--4 manager" data-car-type="manager"></div>
+              <div class="type type--5 sport" data-car-type="sport"></div>
             </div>
 
             <!-- SELECT BRAND -->
@@ -228,62 +244,84 @@
         </div>
 
         <div class="selection__cars cars">
+
+          <!-- REQUESTED STARTING CARS  -->
           
+          <!-- FAMILY -->
+            <div class="car" data-car-name="octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="a3" style="background:url('images/cars_bg/audi_a3.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+
+            <!-- SUV -->
+            <div class="car" data-car-name="kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <div class="car" data-car-name="ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+
+            <!-- Managers -->
+            <div class="car" data-car-name="superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+            <!-- <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') "> -->
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <!-- </div> -->
+
+            <div class="car" data-car-name="a4" style="background:url('images/cars_bg/audi_a4.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            </div>
+
+
+            <!-- Compact -->
             <div class="car" data-car-name="fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
-              <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div>
+              <!-- <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div> -->
             </div>
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg') ">
-            <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
+            <div class="car" data-car-name="polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
+              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
             </div>
 
-            <div class="car" data-car-name="fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
-              <div class="content">fabia</div>
+            <div class="car" data-car-name="a1" style="background:url('images/cars_bg/audi_a1.jpg') ">
+            <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
             </div>
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
+            <div class="car" data-car-name="ibiza" style="background:url('images/cars_bg/seat_ibiza.jpg') ">
+            <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
             </div>
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
+            
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
+            
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
+            
 
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
-
-            <div class="car" data-car-name="audiA1" style="background:url('images/cars_bg/audi_a1.jpg')">
-              <div class="content">audiA1</div>
-            </div>
+           
+            
 
 
 
