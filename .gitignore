@@ -3,6 +3,7 @@ node_modules
 test/results
 test/coverage
 cuts
+dist
 
 ## OS X
 .DS_Store
