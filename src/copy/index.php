@@ -231,74 +231,75 @@
           <!-- REQUESTED STARTING CARS  -->
           
           <!-- FAMILY -->
-            <div class="car" data-car-name="Skoda Octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
+          <!--  
+            <div class="car default" data-car-name="Octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
      
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+              <div class="content">Octavia</div> 
             </div>
 
-            <div class="car" data-car-name="VW Golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <div class="car default" data-car-name="Golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <div class="car" data-car-name="Audi A3" style="background:url('images/cars_bg/audi_a3.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <div class="car default" data-car-name="A3" style="background:url('images/cars_bg/audi_a3.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <div class="car" data-car-name="Seat Leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
-            </div>
-
-
-            <!-- SUV -->
-            <div class="car" data-car-name="Skoda Kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
-            </div>
-
-            <div class="car" data-car-name="VW Tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
-            </div>
-
-            <div class="car" data-car-name="Audi Q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
-            </div>
-
-            <div class="car" data-car-name="Seat Ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <div class="car default" data-car-name="Leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
 
-            <!-- Managers -->
-            <div class="car" data-car-name="Skoda Superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            SUV
+            <div class="car default" data-car-name="Kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <!-- <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') "> -->
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
-            <!-- </div> -->
+            <div class="car default" data-car-name="Tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+            </div>
 
-            <div class="car" data-car-name="Audi A4" style="background:url('images/cars_bg/audi_a4.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <div class="car default" data-car-name="Q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+            </div>
+
+            <div class="car default" data-car-name="Ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
 
-            <!-- Compact -->
-            <div class="car" data-car-name="Skoda Fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div> -->
+            <!-- Managers
+            <div class="car default" data-car-name="Superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <div class="car" data-car-name="VW Polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
-              <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> --> 
+            <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <div class="car" data-car-name="Audi A1" style="background:url('images/cars_bg/audi_a1.jpg') ">
-            <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
+            <div class="car default" data-car-name="A4" style="background:url('images/cars_bg/audi_a4.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
             </div>
 
-            <div class="car" data-car-name="Seat Ibiza" style="background:url('images/cars_bg/seat_ibiza.jpg') ">
-            <!-- <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> -->
+
+            Compact
+            <div class="car default" data-car-name="Fabia" style="background:url('images/cars_bg/skoda_fabia.jpg')">
+              <div class="content">לא כולל אגרת רישוי בסך X,XXX₪</div>
             </div>
 
-            
+            <div class="car default" data-car-name="Polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+            </div>
+
+            <div class="car default" data-car-name="A1" style="background:url('images/cars_bg/audi_a1.jpg') ">
+            <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
+            </div>
+
+            <div class="car default" data-car-name="Ibiza" style="background:url('images/cars_bg/seat_ibiza.jpg') ">
+            <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
+            </div>
+
+            --> 
 
             
 

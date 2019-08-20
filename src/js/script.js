@@ -212,9 +212,9 @@ var x = window.matchMedia("(max-width: 768px)")
     carString.push(selectedCars[i].id);  
   }
   carString = carString.join(',');
-  carArr = carString.toString();
-  console.log(carString);
-  console.log(carArr);
+  // carArr = carString.toString();
+  // console.log(carString);
+  // console.log(carArr);
   
   // carString = 'רכבים:' + carString;
   return carString;
@@ -271,7 +271,6 @@ function sendLead(destinationUrl,method,device){
     .addParam({name: 'reffo2', value: document.referrer})
     .addParam({name: 'from', value: device})
     .addParam({name: 'cars_selected', value: carString})
-    .addParam({name: 'cars_arr', value: carArr})
     // .addParam({name: 'campaignId', value: 921 })
     // .addParam({name: 'ProjectID', value: 7003 })
     // .addParam({name: 'Password', value: 'zxc080819' })

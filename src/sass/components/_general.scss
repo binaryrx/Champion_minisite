@@ -401,14 +401,19 @@ section.carsSelection{
 
             background-size: cover;
             background-repeat: no-repeat !important;
-            background:orangered;
+            // background:orangered;
             .content{
-                color:#000;
+                color: #fff;
+                background: #000;
                 position: absolute;
-                right:0;
+                right: 0;
                 left: 0;
-                bottom: 0;
-                font-size:1vw;
+                bottom: 33px;
+                font-size: 1vw;
+                text-align: center;
+                font-size: 1.1vw;
+                text-transform: uppercase;
+                padding: 0.7vh 0;
             }
             
         }
