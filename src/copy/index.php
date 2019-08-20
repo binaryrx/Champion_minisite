@@ -31,8 +31,8 @@
     <script src="https://kit.fontawesome.com/7c6882f75f.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700&amp;subset=hebrew" rel="stylesheet"> -->
     <!-- Add owlCarousel -->
-    <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.carousel.min.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.theme.default.min.css"> -->
     <!-- Add favicon -->
     <!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
     <!-- preload -->

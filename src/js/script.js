@@ -217,8 +217,10 @@ var x = window.matchMedia("(max-width: 768px)")
   // console.log(carArr);
   
   // carString = 'רכבים:' + carString;
+  carString= JSON.stringify(carString);
   return carString;
 });
+
 
 
 
@@ -268,10 +270,10 @@ function sendLead(destinationUrl,method,device){
     .addParam({name: 'utm_content', value: utm_content})
     .addParam({name: 'utm_term', value: utm_term})
     .addParam({name: 'reffo', value: document.location.href})
-    .addParam({name: 'reffo2', value: document.referrer})
+    // .addParam({name: 'reffo2', value: document.referrer})
     .addParam({name: 'from', value: device})
-    .addParam({name: 'cars_selected', value: carString})
-    // .addParam({name: 'campaignId', value: 921 })
+    .addParam({name: 'reffo2', value: carString})
+    .addParam({name: 'campaignId', value: 123 })
     // .addParam({name: 'ProjectID', value: 7003 })
     // .addParam({name: 'Password', value: 'zxc080819' })
     .addParam({name: 'MediaTitle ', value: utm_source })
@@ -294,9 +296,9 @@ window.mobilecheck = function() {
 
 
 if(x.matches){
-  sendLead('https://lider.k.co.il/savej','GET','mobile');
+  sendLead('http://lider.k.co.il/savej','GET','mobile');
 }else{
-  sendLead('https://lider.k.co.il/savej','GET','desktop');
+  sendLead('http://lider.k.co.il/savej','GET','desktop');
 }
 
 
