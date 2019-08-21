@@ -4,8 +4,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Chamption Minisite</title>
-    <meta name="description" content="Chamption Minisite">
+    <title>צ'מפיון מוטורס</title>
+    <meta name="description" content="אירוע המכירות של השנה חוזר">
     <!-- <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
@@ -126,18 +126,22 @@
       <img src="images/mobile/X_icon.png" alt="" id="closeForm" class="close mobile">
 
        <div class="outer">
+         <div id="thanku">
+         תודה שפניתם אלינו, <br>
+נציגנו יחזור אליכם<br> בהקדם.
+         </div>
          <div class="inner">
-           <h2>לתיאום פגישה</h2>
+           <h2 id='formHead'>לתיאום פגישה</h2>
            <!-- <form action=""> -->
            <form novalidate="novalidate" id="mainForm" method="GET">
-           <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" validation="text" required>
-           <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" validation="text" required>
-           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" validation="israelPhone" required>
+           <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" validation="text" >
+           <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" validation="text" >
+           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" validation="israelPhone" >
              
-             <input class="input lastInp" type="email" name="Email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' validation="email" required>
+             <input class="input lastInp" type="email" name="Email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' validation="email" >
 
              <!-- brand select -->
-             <select name="brand" id="">
+             <select name="brand" id="" >
              <option value="" disabled selected>בחר</option>
                <option value="skoda">Skoda</option>
                <option value="volkswagen">Volkswagen</option>

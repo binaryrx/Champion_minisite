@@ -9,7 +9,6 @@ vh = vh + "px";
 document.documentElement.style.setProperty('--vh',vh)
 })
 
-
 $( document ).ready(function() {
 
     //Change background on mobile threshold.
@@ -131,7 +130,6 @@ $( document ).ready(function() {
   
     
 
-
     // Open/Close form mobile
 
     $('#openForm').on('click',function(){
@@ -191,9 +189,6 @@ var utm_term = urlParams['utm_term'] || '';
 
 var carString = [];
 
-// var newsletter = urlParams['newsletter'] || 'לא';
-// var newsletter = urlParams['privacy'] || 'לא';
-
 var checkbox = $('input[type="checkbox"]');
 checkbox.val('לא');
 checkbox.on('change', function(){
@@ -201,23 +196,59 @@ checkbox.on('change', function(){
     else $(this).val('לא');
 });
 
+var x = window.matchMedia("(max-width: 768px)");
 
-var x = window.matchMedia("(max-width: 768px)")
 
- $('#sendME').on('click',function(e){
+
+
+
+$('#sendME').on('click',function(e){
   var selectedCars = document.getElementsByClassName('formSelectedCar');
+  var selectedBrands = [];
 
-  for(i=0;i<selectedCars.length;i++){
+  for(var i=0;i<selectedCars.length;i++){
     
-    carString.push(selectedCars[i].id);  
-  }
-  carString = carString.join(',');
-  // carArr = carString.toString();
-  // console.log(carString);
-  // console.log(carArr);
-  
-  // carString = 'רכבים:' + carString;
-  carString= JSON.stringify(carString);
+    selectedBrands.push(selectedCars[i].dataset.carbrand);
+    carString.push(selectedCars[i].id); 
+  } 
+    console.log(carString);
+
+    if(carString[1] == undefined){
+      console.log('one car');
+      var leadBrand = selectedBrands;
+      
+      if(x.matches){
+        
+        sendLead('http://lider.k.co.il/savej','GET','mobile',carString[0],leadBrand[0]);
+      }else{
+        console.log(carString[0])
+        sendLead('http://lider.k.co.il/savej','GET','desktop',carString[0],leadBrand[0]);
+      }
+
+    }else{
+
+      // if(leadBrand[0] == 'skoda'){
+      //   console.log('car brand is skoda')
+      // }
+      if(x.matches){
+        
+        sendLead('http://lider.k.co.il/savej','GET','mobile',carString,leadBrand);
+      }else{
+        console.log(carString[0])
+        sendLead('http://lider.k.co.il/savej','GET','desktop',carString,leadBrand);
+      }
+      console.log('multiple cars')
+      var leadBrand = selectedBrands;
+      
+      console.log(leadBrand)
+      
+      carString.push("בחירה מרובה")
+
+
+    }
+    carString= JSON.stringify(carString);
+    
+    console.log(carString)
   return carString;
 });
 
@@ -226,17 +257,16 @@ var x = window.matchMedia("(max-width: 768px)")
 
 
 
-
-
-
-
 // send to lider
-function sendLead(destinationUrl,method,device){
+function sendLead(destinationUrl,method,device,carModel,brand){
+  var carStr;
 
   $('#mainForm').on('click',function(e){
     // e.preventDefault();
 
   });
+
+ 
     
     var str = $('form').serialize();  
     var pieces = str.split('=');
@@ -255,6 +285,7 @@ function sendLead(destinationUrl,method,device){
         done: function(data){
             $("#mainForm").fadeOut(250, function(){
                 $("#thanku").fadeIn(250); 
+                $("#formHead").fadeOut(250); 
                 // $('.formHead ').css('display','none');
             });
             dataLayer.push({'event': 'Lead'});
@@ -270,10 +301,13 @@ function sendLead(destinationUrl,method,device){
     .addParam({name: 'utm_content', value: utm_content})
     .addParam({name: 'utm_term', value: utm_term})
     .addParam({name: 'reffo', value: document.location.href})
-    // .addParam({name: 'reffo2', value: document.referrer})
+    .addParam({name: 'reffo2', value: document.referrer})
     .addParam({name: 'from', value: device})
-    .addParam({name: 'reffo2', value: carString})
-    .addParam({name: 'campaignId', value: 123 })
+    .addParam({name: 'model', value: carModel})
+    .addParam({name: 'comments', value: carString})
+    // .addParam({name: 'campaignId', value: 208 })
+    .addParam({name: 'brand', value: brand })
+    // .addParam({name: 'brandD', value: brand })
     // .addParam({name: 'ProjectID', value: 7003 })
     // .addParam({name: 'Password', value: 'zxc080819' })
     .addParam({name: 'MediaTitle ', value: utm_source })
@@ -282,6 +316,7 @@ function sendLead(destinationUrl,method,device){
         if(validDate.test(value)) return true;
         return false;
     })
+    
 }
 
 
@@ -295,11 +330,11 @@ window.mobilecheck = function() {
 
 
 
-if(x.matches){
-  sendLead('http://lider.k.co.il/savej','GET','mobile');
-}else{
-  sendLead('http://lider.k.co.il/savej','GET','desktop');
-}
+// if(x.matches){
+//   sendLead('http://lider.k.co.il/savej','GET','mobile');
+// }else{
+//   sendLead('http://lider.k.co.il/savej','GET','desktop');
+// }
 
 
 
