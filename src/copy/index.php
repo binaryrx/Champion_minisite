@@ -1,4 +1,58 @@
+<?php
 
+$utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : '';
+$phoneNumber = '0732452033';
+if($utm_source){
+  switch($utm_source){
+    case 'star':
+    $phoneNumber = '0732452025';
+    break;
+    
+    case 'googlesearch':
+    $phoneNumber = '0732452026';
+    break;
+    case 'gdn':
+    $phoneNumber = '0732452027';
+    break;
+
+    case 'facebook':
+    $phoneNumber = '0732452028';
+    break;
+    
+    case 'instagram':
+    $phoneNumber = '0732452029';
+    break;
+    
+    case 'youtube':
+    $phoneNumber = '0732452030';
+    break;
+    
+    case 'ad_extension':
+    $phoneNumber = '0732452031';
+    break;
+    
+    case 'dv':
+    $phoneNumber = '0732452032';
+    break;
+    
+    case 'nosource':
+    $phoneNumber = '0732452033';
+    break;
+    
+    case 'mako':
+    $phoneNumber = '0732452034';
+    break;
+    
+    case 'walla':
+    $phoneNumber = '0732452035';
+    break;
+    
+    case 'defaultive':
+    $phoneNumber = '0732452036';
+    break;
+  }
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -10,13 +64,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Referrer-Policy" content="no-referrer, strict-origin-when-cross-origin">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self';
-     script-src 'unsafe-inline' 'self' https://code.jquery.com/ https://www.googletagmanager.com/ https://kit.fontawesome.com/ https://www.google-analytics.com/ https://www.googleadservices.com/ https://connect.facebook.net/ https://211412.tctm.co/t https://googleads.g.doubleclick.net/ https://facebook.com/ https://google.com/ https://google.co.il/ https://211412.tctm.co/t.js https://k.co.il/ https://www.bmby.com/; 
+     script-src 'unsafe-inline' 'self' https://code.jquery.com/ https://www.googletagmanager.com/ https://kit.fontawesome.com/ https://www.google-analytics.com/ https://www.googleadservices.com/ https://connect.facebook.net/ https://211412.tctm.co/t https://googleads.g.doubleclick.net/ https://facebook.com/ https://google.com/ https://google.co.il/ https://211412.tctm.co/t.js https://k.co.il/ https://www.bmby.com/;
      connect-src 'self' https://211412.tctm.co/x.json;
      img-src 'self' https://www.google.com/ https://www.google-analytics.com/ https://www.facebook.com/ https://www.google.co.il/ https://googleads.g.doubleclick.net/;
      style-src 'unsafe-inline' 'self' https://netdna.bootstrapcdn.com/;
      style-src-elem 'self' https://kit-free.fontawesome.com https://netdna.bootstrapcdn.com/  ;
      font-src 'self' https://netdna.bootstrapcdn.com/ https://kit-free.fontawesome.com/;"> -->
-    
+
 
     <!-- Add jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -40,7 +94,7 @@
     <link rel="preload" href="fonts/VWHebrew-Regular.otf" as="font" crossorigin=anonymous>
     <link rel="preload" href="fonts/VWHebrew-Bold.otf" as="font" crossorigin=anonymous>
     <!-- <link rel="preload" href="images/desktop/bg.webp" as="image" crossorigin=anonymous> -->
-  
+
   <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141535915-1"></script>
@@ -51,8 +105,8 @@
   <!-- Google Tag Manager -->
   <script async src="js/gtm.js"></script>
   <script async src="js/ga.js"> </script>
-  
-  
+
+
 
 <!-- <script> -->
   <!-- window.mobilecheck = function() {
@@ -66,8 +120,8 @@
 
 
   <body>
-    
-      
+
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2VTNF"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -80,7 +134,7 @@
         <div class="outer">
           <img src="images/desktop/champion_logo.png" alt="" class="champ_logo">
           <div class="inner">
-            
+
             <img src="images/desktop/sun_desktop.png" alt="" class="desktop sun">
             <div class="textCont">
               <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
@@ -88,11 +142,11 @@
               <img src="images/desktop/cars_logos_white.png" alt="">
               <h3 class="subTxt">מותגי הרכב המובילים בעולם בהטבות שאסור לפספס</h3>
               <h2 class="mobile"><div></div>11-13 בספטמבר</h2>
-           
+
 
               <div class="buttons desktop downArrow" >
                 <a href="#carSelect" >
-                  <span>לצפייה בדגמים</span>              
+                  <span>לצפייה בדגמים</span>
                   <img src="images/desktop/arrows.png" alt="">
                 </a>
               </div>
@@ -105,7 +159,7 @@
               <img src="images/mobile/triangle.png" alt="">
             </button>
 
-            <button id="callme" class="btn btn--secondary" onclick="document.location.href = 'tel:972508907997'">  לשיחה עם נציג
+            <button id="callme" class="btn btn--secondary" onclick="document.location.href = 'tel:<?php echo $phoneNumber;?>'">  לשיחה עם נציג
             <img src="images/mobile/phone_icon.png" alt="">
             </button>
 
@@ -134,11 +188,11 @@
            <h2 id='formHead'>לתיאום פגישה</h2>
            <!-- <form action=""> -->
            <form novalidate="novalidate" id="mainForm" method="GET">
-           <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" validation="text" >
-           <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" validation="text" >
-           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" validation="israelPhone" >
-             
-             <input class="input lastInp" type="email" name="Email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' validation="email" >
+           <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" data-v="name" data-required="true">
+           <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" data-v="name" data-required="true">
+           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" data-v="phone_il" data-required="true">
+
+             <input class="input lastInp" type="email" name="email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' data-v="email" data-required="true">
 
              <!-- brand select -->
              <select name="brand" id="" >
@@ -167,7 +221,7 @@
                 <button id="sendME">שלח ></button>
                 <div class="checkbox">
                   <input type="checkbox" name="privacy" id="checkme" class="privacy" value='כן'  checked>
-            <label for="privacy" style="direction: rtl" class="container">מסכים 
+            <label for="privacy" style="direction: rtl" class="container">מסכים
                     <a href="https://www.skoda.co.il/terms-of-use/" target="_blank" >
                     למדיניות הפרטיות
                     </a>
@@ -181,7 +235,7 @@
              </div>
 
              <div class="legal desktop">
-               <h3>לשיחה עם נציג: 6672*</h3>
+               <h3>לשיחה עם נציג: <?php echo $phoneNumber;?></h3>
             <a href="#">דרגות זיהום ובטיחות</a>
             <span>&nbsp;|&nbsp; </span>
             <a href="#">הערות משפטיות</a>
@@ -233,56 +287,56 @@
         <div class="selection__cars cars">
 
           <!-- REQUESTED STARTING CARS  -->
-          
+
           <!-- FAMILY -->
-          <!--  
+          <!--
             <div class="car default" data-car-name="Octavia" data-car-brand="skoda" style="background:url('images/cars_bg/skoda_octavia.jpg') ">
-     
-              <div class="content">Octavia</div> 
+
+              <div class="content">Octavia</div>
             </div>
 
             <div class="car default" data-car-name="Golf" data-car-brand="vw" style="background:url('images/cars_bg/vw_golf.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="A3" style="background:url('images/cars_bg/audi_a3.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="Leon" style="background:url('images/cars_bg/seat_leon.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
 
             SUV
             <div class="car default" data-car-name="Kodiaq" style="background:url('images/cars_bg/skoda_kodiaq.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="Tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="Q3" style="background:url('images/cars_bg/audi_q3.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="Ateca" style="background:url('images/cars_bg/seat_ateca.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
 
             <!-- Managers
             <div class="car default" data-car-name="Superb" style="background:url('images/cars_bg/skoda_superb.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car" data-car-name="tiguan" style="background:url('images/cars_bg/vw_tiguan.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="A4" style="background:url('images/cars_bg/audi_a4.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
 
@@ -292,7 +346,7 @@
             </div>
 
             <div class="car default" data-car-name="Polo" style="background:url('images/cars_bg/vw_polo.jpg') ">
-              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div> 
+              <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
             <div class="car default" data-car-name="A1" style="background:url('images/cars_bg/audi_a1.jpg') ">
@@ -303,14 +357,14 @@
             <div class="content">לא כולל אגרת רישוי בסך 1,355₪</div>
             </div>
 
-            --> 
+            -->
 
-            
 
-            
 
-           
-            
+
+
+
+
 
 
 
@@ -328,10 +382,10 @@
           </footer>
       </section>
     </main>
-  
+
     <script>
-    
-    
+
+
     </script>
 
     <script src="js/zoom.min.js"></script>

@@ -820,12 +820,10 @@ section.carsSelection{
                 // grid-area: 
                 // width:46vw;
                 height:46vw;
-                background:orangered;
                 &:nth-child(odd){
                    
                 }
                 &:nth-child(even){
-                    background:pink;
                 }
                 .content{
                     font-size:5vw;
