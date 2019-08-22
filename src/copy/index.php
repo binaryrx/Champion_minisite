@@ -231,9 +231,9 @@ if($utm_source){
 
              <div class="legal desktop">
                <h3>לשיחה עם נציג: <?php echo $phoneNumber;?></h3>
-            <a href="pollution.png" target="_blank">דרגות זיהום ובטיחות</a>
+            <a href="pollution.html" target="_blank">דרגות זיהום ובטיחות</a>
             <span>&nbsp;|&nbsp; </span>
-            <a href="legal.png" target="_blank">הערות משפטיות</a>
+            <a href="legal.html" target="_blank">הערות משפטיות</a>
           </div>
 
            </form>
