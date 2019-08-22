@@ -217,7 +217,7 @@ if($utm_source){
                 <div class="checkbox">
                   <input type="checkbox" name="privacy" id="checkme" class="privacy" value='כן'  checked>
             <label for="privacy" style="direction: rtl" class="container">מסכים
-                    <a href="https://www.skoda.co.il/terms-of-use/" target="_blank" >
+                    <a style='text-decoration:underline;' href="https://www.championmotors.co.il/%d7%9e%d7%93%d7%99%d7%a0%d7%99%d7%95%d7%aa-%d7%a4%d7%a8%d7%98%d7%99%d7%95%d7%aa/" target="_blank" >
                     למדיניות הפרטיות
                     </a>
                     ומאשר שמירת הפרטים במאגר המידע
