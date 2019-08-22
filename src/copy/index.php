@@ -77,16 +77,11 @@ if($utm_source){
     <!-- Add FancyBox -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
-    <link rel="stylesheet" href="fancybox/jquery.fancybox.min.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="fancybox/jquery.fancybox.min.js"></script>
     <!-- Add Stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/main.min.css" />
     <!-- Add FontAwesome -->
     <script src="https://kit.fontawesome.com/7c6882f75f.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700&amp;subset=hebrew" rel="stylesheet"> -->
-    <!-- Add owlCarousel -->
-    <!-- <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.carousel.min.css"> -->
-    <!-- <link rel="stylesheet" href="vendor/owlCarousel/assets/owl.theme.default.min.css"> -->
     <!-- Add favicon -->
     <!-- <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
     <!-- preload -->
@@ -135,7 +130,7 @@ if($utm_source){
           <img src="images/desktop/champion_logo.png" alt="" class="champ_logo">
           <div class="inner">
 
-            <img src="images/desktop/sun_desktop.png" alt="" class="desktop sun">
+            <img src="images/desktop/sun_desktop.webp" alt="" class="desktop sun">
             <div class="textCont">
               <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
               <h2 class="desktop"><span></span> <span>&nbsp;&nbsp;11-13 בספטמבר&nbsp;&nbsp;</span><span></span></h2>
@@ -147,7 +142,7 @@ if($utm_source){
               <div class="buttons desktop downArrow" >
                 <a href="#carSelect" >
                   <span>לצפייה בדגמים</span>
-                  <img src="images/desktop/arrows.png" alt="">
+                  <img src="images/desktop/arrows.webp" alt="">
                 </a>
               </div>
             </div>
@@ -166,9 +161,9 @@ if($utm_source){
           </div>
 
           <div class="legal mobile">
-            <a href="#">דרגות זיהום ובטיחות</a>
+            <a href="pollution.png" target="_blank">דרגות זיהום ובטיחות</a>
             <span>|</span>
-            <a href="#">הערות משפטיות</a>
+            <a href="legal.png" target="_blank">הערות משפטיות</a>
           </div>
 
         </div>
@@ -236,9 +231,9 @@ if($utm_source){
 
              <div class="legal desktop">
                <h3>לשיחה עם נציג: <?php echo $phoneNumber;?></h3>
-            <a href="#">דרגות זיהום ובטיחות</a>
+            <a href="pollution.png" target="_blank">דרגות זיהום ובטיחות</a>
             <span>&nbsp;|&nbsp; </span>
-            <a href="#">הערות משפטיות</a>
+            <a href="legal.png" target="_blank">הערות משפטיות</a>
           </div>
 
            </form>
@@ -373,10 +368,10 @@ if($utm_source){
 
           <footer id="foot">
             <div class="cont">
-              <button class="mobile"><span>להשארת פרטים</span> לחצו כאן &nbsp;>></button>
+              <button class="mobile" id="openFormButtom"><span>להשארת פרטים</span> לחצו כאן &nbsp;>></button>
               <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל.</p>
               <!-- <img src="images/desktop/champion_logo.png" alt="chamption motors"> -->
-              <img src="images/desktop/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="desktop">
+              <img src="images/desktop/logos_footer.webp" alt="Volkswagen Seat Skoda Audi" class="desktop">
               <img src="images/mobile/footer_logos.png" alt="Volkswagen Seat Skoda Audi" class="mobile footerImg">
             </div>
           </footer>
@@ -392,7 +387,5 @@ if($utm_source){
     <script src="js/formValidationAjax.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/carFilter.js"></script>
-    <script src="vendor/owlCarousel/owl.carousel.min.js"></script>
-
   </body>
 </html>

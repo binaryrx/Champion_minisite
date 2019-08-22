@@ -1,3 +1,4 @@
+
 function Validator(form, options) {
   this.inputs = [].slice.call(form.querySelectorAll("[data-v]"));
   this.options = options;
@@ -75,7 +76,7 @@ const lead = data =>
   $.when(
     $.ajax({
       type: "GET",
-      url: "https://k.co.il/lider/savej",
+      url: "http://lider.k.co.il/savej",
       data,
       crossDomain: true,
       dataType: "jsonp"
@@ -121,6 +122,9 @@ $(document).ready(function() {
   }
   //-- usage --//
   preload(
+    "images/desktop/welcome_bg_full.webp",
+    "images/desktop/champion_logo.webp",
+    "images/desktop/sun_desktop.webp",
     "images/desktop/buttons/compact_BTN_blue.jpg",
     "images/desktop/buttons/family_BTN_blue.jpg",
     "images/desktop/buttons/suv_BTN_blue.jpg",
@@ -130,6 +134,7 @@ $(document).ready(function() {
     "images/desktop/buttons/skoda_BTN_blue.jpg",
     "images/desktop/buttons/seat_BTN_blue.jpg",
     "images/desktop/buttons/vw_BTN_blue.jpg"
+    
   );
 
   //                  //
@@ -201,6 +206,13 @@ $(document).ready(function() {
   // Open/Close form mobile
 
   $("#openForm").on("click", function() {
+    $("section.welcome").fadeOut();
+    $("section.form").fadeIn();
+    $("section.form").addClass("open");
+    $("section#carSelect").fadeOut();
+  });
+
+  $("#openFormButtom").on("click", function() {
     $("section.welcome").fadeOut();
     $("section.form").fadeIn();
     $("section.form").addClass("open");
