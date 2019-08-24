@@ -3,72 +3,70 @@
 var carsObj = {
   
   default : {
-    'octavia':'skoda_octavia',
-    'golf':'vw_golf',
-    'a3':'audi_a3',
-    'leon':'seat_leon',
-    'kodiaq':'skoda_kodiaq',
-    'tiguan':'vw_tiguan',
-    'q3':'audi_q3',
-    'ateca':'seat_ateca',
-    'superb':'skoda_superb',
-    'a4':'audi_a4',
-    'a1':'audi_a1',
-    'fabia':'skoda_fabia',
-    'polo':'vw_polo',
-    'ibiza':'seat_ibiza'
+    'Skoda Octavia':'skoda_octavia',
+    'Volkswagen Golf':'vw_golf',
+    'Audi A3':'audi_a3',
+    'Seat Leon':'seat_leon',
+    'Skoda Kodiaq':'skoda_kodiaq',
+    'Volkswagen Tiguan':'vw_tiguan',
+    'Audi Q3':'audi_q3',
+    'Seat Ateca':'seat_ateca',
+    'Skoda Superb':'skoda_superb',
+    'Audi A4':'audi_a4',
+    'Audi A1':'audi_a1',
+    'Skoda Fabia':'skoda_fabia',
+    'Volkswagen Polo':'vw_polo',
+    'Seat Ibiza':'seat_ibiza'
   },
   compact: {
-    'fabia':'skoda_fabia',
-    'ibiza':'seat_ibiza',
-    'polo':'vw_polo',
-    'golf':'vw_golf',
-    'a1':'audi_a1'
+    'Skoda Fabia':'skoda_fabia',
+    'Seat Ibiza':'seat_ibiza',
+    'Volkswagen Polo':'vw_polo',
+    'Volkswagen Golf':'vw_golf',
+    'Audi A1':'audi_a1'
   },
   sport:{
-    'octavia rs':'skoda_octavia_rs',
-    'leon cupra':'seat_leon_cupra',
-    'golf gti':'vw_golf_gti',
-    'polo gti':'vw_polo_gti',
-    'tt':'audi_tt',
-    's3':'audi_s3'
+    'Skoda Octavia RS':'skoda_octavia_rs',
+    'Seat Leon Cupra':'seat_leon_cupra',
+    'Volkswagen Golf GTI':'vw_golf_gti',
+    'Volkswagen Polo GTI':'vw_polo_gti',
+    'Audi TT':'audi_tt',
+    'Audi S3':'audi_s3'
   },
   family: {
-    'octavia':'skoda_octavia',
-    'karoq':'skoda_karoq',
-    'leon':'seat_leon',
-    'golf':'vw_golf',
-    'tiguan':'vw_tiguan',
-    'a3':'audi_a3',
-    'a4':'audi_a4',
-    // 'a5':'audi_a5',
-    'q3':'audi_q3',
-    'q5':'audi_q5'
+    'Skoda Octavia':'skoda_octavia',
+    'Skoda Karoq':'skoda_karoq',
+    'Seat Leon':'seat_leon',
+    'Volkswagen Golf':'vw_golf',
+    'Volkswagen Tiguan':'vw_tiguan',
+    'Audi A3':'audi_a3',
+    'Audi A4':'audi_a4',
+    'Audi Q3':'audi_q3',
+    'Audi Q5':'audi_q5'
   },
   suv:{
-    'kodiaq':'skoda_kodiaq',
-    'karoq':'skoda_karoq',
-    'ateca':'seat_ateca',
-    'arona':'seat_arona',
-    'tiguan':'vw_tiguan',
-    'touareg':'vw_touareg',
-    'q2':'audi_q2',
-    'q3':'audi_q3',
-    'q5':'audi_q5',
-    'q7':'audi_q7',
-    'q8':'audi_q8'
+    'Skoda Kodiaq':'skoda_kodiaq',
+    'Skoda Karoq':'skoda_karoq',
+    'Seat Ateca':'seat_ateca',
+    'Seat Arona':'seat_arona',
+    'Volkswagen Tiguan':'vw_tiguan',
+    'Volkswagen Touareg':'vw_touareg',
+    'Audi q2':'audi_q2',
+    'Audi q3':'audi_q3',
+    'Audi q5':'audi_q5',
+    'Audi q7':'audi_q7',
+    'Audi q8':'audi_q8'
   },
   manager: {
-    'superb':'skoda_superb',
-    'kodiaq':'skoda_kodiaq',
-    'tiguan':'vw_tiguan',
-    'touareg':'vw_touareg',
-    'a4':'audi_a4',
-    'a6':'audi_a6',
-    'a7':'audi_a7',
-    'a8':'audi_a8',
-    'q7':'audi_q7',
-    'q8':'audi_q8'
+    'Skoda Superb':'skoda_superb',
+    'Skoda Kodiaq':'skoda_kodiaq',
+    'Volkswagen Tiguan':'vw_tiguan',
+    'Volkswagen Touareg':'vw_touareg',
+    'Audi A6':'audi_a6',
+    'Audi A7':'audi_a7',
+    'Audi A8':'audi_a8',
+    'Audi Q7':'audi_q7',
+    'Audi Q8':'audi_q8'
   },
   
 };
@@ -76,43 +74,43 @@ var carsObj = {
 
 var car_brands = {
   seat: {
-    'ibiza': 'seat_ibiza',
-    'ateca': 'seat_ateca',
-    'arona': 'seat_arona',
-    'leon': 'seat_leon',
-    'leon cupra': 'seat_leon_cupra'
+    'Seat Ibiza': 'seat_ibiza',
+    'Seat Ateca': 'seat_ateca',
+    'Seat Arona': 'seat_arona',
+    'Seat leon': 'seat_leon',
+    'Seat Leon Cupra': 'seat_leon_cupra'
   },
   skoda: {
-    'superb': "skoda_superb",
-    'kodiaq': "skoda_kodiaq",
-    'octavia': 'skoda_octavia',
-    'fabia': 'skoda_fabia',
-    'karoq': 'skoda_karoq',
-    'octavia rs': 'skoda_octavia_rs'
+    'Skoda Superb': "skoda_superb",
+    'Skoda Kodiaq': "skoda_kodiaq",
+    'Skoda Octavia': 'skoda_octavia',
+    'Skoda Fabia': 'skoda_fabia',
+    'Skoda Karoq': 'skoda_karoq',
+    'Skoda Octavia RS': 'skoda_octavia_rs'
   },
   volkswagen: {
-    'polo': "vw_polo",
-    "golf": 'vw_golf',
-    "tiguan": 'vw_tiguan',
-    "touareg": 'vw_touareg',
-    "golf gti": 'vw_golf_gti',
-    "polo gti": 'vw_polo_gti'
+    'Volkswagen Polo': "vw_polo",
+    "Volkswagen Golf": 'vw_golf',
+    "Volkswagen Tiguan": 'vw_tiguan',
+    "Volkswagen Touareg": 'vw_touareg',
+    "Volkswagen Golf GTI": 'vw_golf_gti',
+    "Volkswagen Polo GTI": 'vw_polo_gti'
   },
   audi: {
-    'a1': 'audi_a1',
-    'a3': 'audi_a3',
-    'a4': 'audi_a4',
-    'a6': 'audi_a6',
-    'a7': 'audi_a7',
-    'a8': 'audi_a8',
-    'q2': 'audi_q2',
-    'q3': 'audi_q3',
-    'q5': 'audi_q5',
-    'q7': 'audi_q7',
-    'q8': 'audi_q8',
-    'etron': 'audi_etron',
-    'tt': 'audi_tt',
-    's3': 'audi_s3'
+    'Audi A1': 'audi_a1',
+    'Audi A3': 'audi_a3',
+    'Audi A4': 'audi_a4',
+    'Audi A6': 'audi_a6',
+    'Audi A7': 'audi_a7',
+    'Audi A8': 'audi_a8',
+    'Audi Q2': 'audi_q2',
+    'Audi Q3': 'audi_q3',
+    'Audi Q5': 'audi_q5',
+    'Audi Q7': 'audi_q7',
+    'Audi Q8': 'audi_q8',
+    'Audi Etron': 'audi_etron',
+    'Audi TT': 'audi_tt',
+    'Audi S3': 'audi_s3'
   }
 };
 
@@ -297,12 +295,13 @@ var selected_types = [],
     if($(this).hasClass('car-selected')){
       
       // if(selectedCars.length )
-  
-      addToSelectedCar($(this).attr("data-car-name"));
       var selectedCars = $('.formSelectedCar');
+      
+      if(selectedCars.length >=0 && selectedCars.length  <4){
+        addToSelectedCar($(this).attr("data-car-name"));
+      }
   
-      if(selectedCars.length > 4){
-        removeFromSelectedCars($(this)[0].classList[1])  
+      if(selectedCars.length >= 4){
         $(this).removeClass('car-selected');
         $(this).parent()[0].firstChild.classList.remove('show')
         // console.log($(this).parent()[0].firstChild.classList.removeClass('show'))
@@ -321,17 +320,23 @@ var selected_types = [],
   });
 });
 
-
+var carsHeader = $('#carsHeader');
+carsHeader.hide();
 //before filter
 $(".selection__cars.cars > .carWrap > .car").click(function(){
   
   if($(this).hasClass('car-selected')){
-
-    addToSelectedCar($(this).attr("data-car-name"));
     var selectedCars = $('.formSelectedCar');
 
-    if(selectedCars.length > 4){
-      removeFromSelectedCars($(this)[0].classList[1])  
+    if(selectedCars.length >=0){
+      carsHeader.show();
+    }
+    
+    if(selectedCars.length >=0 && selectedCars.length  <4){
+      addToSelectedCar($(this).attr("data-car-name"));
+    }
+    if(selectedCars.length >= 4){
+      // removeFromSelectedCars($(this)[0].classList[1])  
       $(this).removeClass('car-selected');
       $(this).parent()[0].firstChild.classList.remove('show')
       // console.log($(this).parent()[0].firstChild.classList.remove('show'));
@@ -369,26 +374,24 @@ cars.each((function(){
     // img.classList = 'blue_v';
 
     //append car to list 
-    if(formSelectedCar.length == 0){
-      carSelect(target);
-      addToSelectedCar(target);
-      //if  4 cars, remove last show error + remove last selection
-    }else if(formSelectedCar.length >= 4){
-      $('.error').fadeIn();
-      $(this).removeClass('car-selected');
-      removeFromSelectedCars(target)
-      // $('.error').fadeOut();
-    }else{
-      if( $(this).hasClass('car-selected') ){
-
-        $(this).removeClass('car-selected');
-        
-        removeFromSelectedCars(target)
-      }else{
-        carSelect(target);
-        addToSelectedCar(target);
-      }
-    }    
+    // if(formSelectedCar.length == 0){
+    //   carSelect(target);
+    //   addToSelectedCar(target);
+    //   //if  4 cars, remove last show error + remove last selection
+    // }else if(formSelectedCar.length >= 4){
+    //   $('.error').fadeIn();
+    //   $(this).removeClass('car-selected');
+    //   removeFromSelectedCars(target)
+    //   // $('.error').fadeOut();
+    // }else{
+    //   if( $(this).hasClass('car-selected') ){
+    //     $(this).removeClass('car-selected');
+    //     removeFromSelectedCars(target)
+    //   }else{
+    //     carSelect(target);
+    //     addToSelectedCar(target);
+    //   }
+    // }    
     
   }));
   
@@ -448,10 +451,13 @@ function addToSelectedCar(carName){
     var target = $(this).parent().parent().parent()[0]
     var targetID = $(this).parent().parent().parent()[0].id;
     var element = $(`div[data-car-name="${targetID}"]`);
+    var elementBlueV = element.parent()[0].firstChild.classList
+    
+   
 
     target.remove();
     element.removeClass('car-selected');
-
+    elementBlueV.remove('show');
 
     // console.log(target);
     // console.log(targetID);
@@ -495,25 +501,25 @@ cars.each(function(){
     // img.classList = 'blue_v';
 
     //append car to list
-    if(formSelectedCar.length == 0){
-      carSelect(target);
-      addToSelectedCar(target);
-      //if more than 4 cars, remove last show error + remove last selection
-    }else if(formSelectedCar.length >= 4){
-      $('.error').fadeIn();
-      $(this).removeClass('car-selected');
-      removeFromSelectedCars(target)
-      // $('.error').fadeOut();
-    }else{
-      if( $(this).hasClass('car-selected') ){
-        $(this).removeClass('car-selected');
-        removeFromSelectedCars(target)
-      }else{
-        carSelect(target);
-        addToSelectedCar(target);
+    // if(formSelectedCar.length == 0){
+    //   carSelect(target);
+    //   addToSelectedCar(target);
+    //   //if more than 4 cars, remove last show error + remove last selection
+    // }else if(formSelectedCar.length >= 4){
+    //   $('.error').fadeIn();
+    //   $(this).removeClass('car-selected');
+    //   removeFromSelectedCars(target)
+    //   // $('.error').fadeOut();
+    // }else{
+    //   if( $(this).hasClass('car-selected') ){
+    //     $(this).removeClass('car-selected');
+    //     removeFromSelectedCars(target)
+    //   }else{
+    //     carSelect(target);
+    //     addToSelectedCar(target);
         
-      }
-    }
+    //   }
+    // }
     
     
   });

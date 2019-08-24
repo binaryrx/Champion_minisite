@@ -191,7 +191,7 @@ if($utm_source){
 
              <!-- brand select -->
              <select name="brand" id="" >
-             <option value="" disabled selected>בחר</option>
+             <option value="" disabled selected>בחר מותג</option>
                <option value="skoda">Skoda</option>
                <option value="volkswagen">Volkswagen</option>
                <option value="seat">Seat</option>
@@ -200,7 +200,7 @@ if($utm_source){
 
              <!-- Selected cars from car selector -->
              <div class="formSelectedCars">
-                <h3>הרכבים שבחרתי</h3>
+                <h3 id="carsHeader">הרכבים שבחרתי</h3>
                 <div class="formCarsCont" id="formCars">
 
                     <!-- <div class="formSelectedCar">
@@ -249,7 +249,7 @@ if($utm_source){
           <!-- Instructions , head -->
           <div class="selection__head">
             <h3>בחרו את הדגמים המועדפים עליכם</h3>
-            <p>סמנו קטגוריה/ות ומותג/ים</p>
+            <p>סמנו קטגוריות ומותגים</p>
           </div>
 
           <!-- SELECT CAR TYPE -->
