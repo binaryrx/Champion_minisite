@@ -51,11 +51,11 @@ var carsObj = {
     'Seat Arona':'seat_arona',
     'Volkswagen Tiguan':'vw_tiguan',
     'Volkswagen Touareg':'vw_touareg',
-    'Audi q2':'audi_q2',
-    'Audi q3':'audi_q3',
-    'Audi q5':'audi_q5',
-    'Audi q7':'audi_q7',
-    'Audi q8':'audi_q8'
+    'Audi Q2':'audi_q2',
+    'Audi Q3':'audi_q3',
+    'Audi Q5':'audi_q5',
+    'Audi Q7':'audi_q7',
+    'Audi Q8':'audi_q8'
   },
   manager: {
     'Skoda Superb':'skoda_superb',
@@ -77,7 +77,7 @@ var car_brands = {
     'Seat Ibiza': 'seat_ibiza',
     'Seat Ateca': 'seat_ateca',
     'Seat Arona': 'seat_arona',
-    'Seat leon': 'seat_leon',
+    'Seat Leon': 'seat_leon',
     'Seat Leon Cupra': 'seat_leon_cupra'
   },
   skoda: {
@@ -119,7 +119,7 @@ var modelNames = {
     'Seat Ibiza': 'IBIZA',
     'Seat Ateca': 'Ateca',
     'Seat Arona': 'Arona',
-    'Seat leon': 'LEON',
+    'Seat Leon': 'LEON',
     'Seat Leon Cupra': 'LEON CUPRA'
   },
   skoda: {
@@ -496,7 +496,7 @@ function addToSelectedCar(carName){
 
   var a = document.createElement('a');
   var img = document.createElement('img');
-  console.log(carName);
+  // console.log(carName);
 
   if(carName in modelNames.audi){
       divFormSelectedCar.id = modelNames.audi[carName];
@@ -507,7 +507,6 @@ function addToSelectedCar(carName){
   }else if( carName in modelNames.volkswagen){
     divFormSelectedCar.id = modelNames.volkswagen[carName];
   }
-
   // divFormSelectedCar.id = result;
      if(carName in car_brands.skoda){ 
       
@@ -524,6 +523,7 @@ function addToSelectedCar(carName){
         div.innerText = carName;
       }
       else if(carName in car_brands.seat){
+        console.log(carName);
         divFormSelectedCar.setAttribute('data-carbrand','seat');
         divInner.className = 'inner';
         div.innerText = carName;
