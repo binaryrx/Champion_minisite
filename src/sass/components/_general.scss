@@ -542,7 +542,7 @@ section.carsSelection{
                 }
                 .btn:first-child{
                     margin-right:6vw;
-                    background: url(../images/mobile/buttons/details_BTN.webp);
+                    background: url(../images/mobile/buttons/details_BTN.webp),url(../images/mobile/buttons/details_BTN.png);
                     background-size: cover;
                     background-position: center center;
                     color:#fff;
@@ -719,34 +719,34 @@ section.carsSelection{
                         background: tomato;
                     }
                     .compact{
-                        background:url(../images/desktop/buttons/compact_BTN.webp);
+                        background:url(../images/desktop/buttons/compact_BTN.webp),url(../images/desktop/buttons/compact_BTN.jpg);
                     }
                     .compact.type-selected{
-                        background:url(../images/desktop/buttons/compact_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/compact_BTN_blue.webp),url(../images/desktop/buttons/compact_BTN_blue.jpg);
                     }
                     .family{
-                        background:url(../images/desktop/buttons/family_BTN.webp);
+                        background:url(../images/desktop/buttons/family_BTN.webp),url(../images/desktop/buttons/family_BTN.jpg);
                     }
                     .family.type-selected{
-                        background:url(../images/desktop/buttons/family_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/family_BTN_blue.webp),url(../images/desktop/buttons/family_BTN_blue.jpg);
                     }
                     .suv{
-                        background:url(../images/desktop/buttons/suv_BTN.webp);
+                        background:url(../images/desktop/buttons/suv_BTN.webp),url(../images/desktop/buttons/suv_BTN.jpg);
                     }
                     .suv.type-selected{
-                        background:url(../images/desktop/buttons/suv_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/suv_BTN_blue.webp),url(../images/desktop/buttons/suv_BTN_blue.jpg);
                     }
                     .manager{
-                        background:url(../images/desktop/buttons/managers_BTN.webp);
+                        background:url(../images/desktop/buttons/managers_BTN.webp),url(../images/desktop/buttons/managers_BTN.jpg);
                     }
                     .manager.type-selected{
-                        background:url(../images/desktop/buttons/managers_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/managers_BTN_blue.webp),url(../images/desktop/buttons/managers_BTN_blue.jpg);
                     }
                     .sport{
-                        background:url(../images/desktop/buttons/sport_BTN.webp);
+                        background:url(../images/desktop/buttons/sport_BTN.webp),url(../images/desktop/buttons/sport_BTN.jpg);
                     }
                     .sport.type-selected{
-                        background:url(../images/desktop/buttons/sport_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/sport_BTN_blue.webp),url(../images/desktop/buttons/sport_BTN_blue.jpg);
                     }
                     
                 }
@@ -773,28 +773,28 @@ section.carsSelection{
                         // transition: 0.2s ease-in;
                     }
                     .audi{
-                        background:url(../images/desktop/buttons/audi_BTN.webp);
+                        background:url(../images/desktop/buttons/audi_BTN.webp),url(../images/desktop/buttons/audi_BTN.jpg);
                     }
                     .audi.brand-selected{
-                        background:url(../images/desktop/buttons/audi_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/audi_BTN_blue.webp),url(../images/desktop/buttons/audi_BTN_blue.jpg);
                     }
                     .skoda{
-                        background:url(../images/desktop/buttons/skoda_BTN.webp);
+                        background:url(../images/desktop/buttons/skoda_BTN.webp),url(../images/desktop/buttons/skoda_BTN.jpg);
                     }
                     .skoda.brand-selected{
-                        background:url(../images/desktop/buttons/skoda_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/skoda_BTN_blue.webp),url(../images/desktop/buttons/skoda_BTN_blue.jpg);
                     }
                     .seat{
-                        background:url(../images/desktop/buttons/seat_BTN.webp);
+                        background:url(../images/desktop/buttons/seat_BTN.webp),url(../images/desktop/buttons/seat_BTN.jpg);
                     }
                     .seat.brand-selected{
-                        background:url(../images/desktop/buttons/seat_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/seat_BTN_blue.webp),url(../images/desktop/buttons/seat_BTN_blue.jpg);
                     }
                     .volkswagen{
-                        background:url(../images/desktop/buttons/vw_BTN.webp);
+                        background:url(../images/desktop/buttons/vw_BTN.webp),url(../images/desktop/buttons/vw_BTN.jpg);
                     }
                     .volkswagen.brand-selected{
-                        background:url(../images/desktop/buttons/vw_BTN_blue.webp);
+                        background:url(../images/desktop/buttons/vw_BTN_blue.webp),url(../images/desktop/buttons/vw_BTN_blue.jpg);
                     }
 
 

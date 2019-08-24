@@ -123,7 +123,7 @@ $(document).ready(function() {
   //-- usage --//
   preload(
     "images/desktop/welcome_bg_full.webp",
-    "images/desktop/champion_logo.webp",
+    "images/desktop/champion_logo.png",
     "images/desktop/sun_desktop.webp",
     "images/desktop/buttons/compact_BTN_blue.jpg",
     "images/desktop/buttons/family_BTN_blue.jpg",
@@ -133,7 +133,16 @@ $(document).ready(function() {
     "images/desktop/buttons/audi_BTN_blue.jpg",
     "images/desktop/buttons/skoda_BTN_blue.jpg",
     "images/desktop/buttons/seat_BTN_blue.jpg",
-    "images/desktop/buttons/vw_BTN_blue.jpg"
+    "images/desktop/buttons/vw_BTN_blue.jpg",
+    "images/desktop/buttons/compact_BTN_blue.webp",
+    "images/desktop/buttons/family_BTN_blue.webp",
+    "images/desktop/buttons/suv_BTN_blue.webp",
+    "images/desktop/buttons/managers_BTN_blue.webp",
+    "images/desktop/buttons/sport_BTN_blue.webp",
+    "images/desktop/buttons/audi_BTN_blue.webp",
+    "images/desktop/buttons/skoda_BTN_blue.webp",
+    "images/desktop/buttons/seat_BTN_blue.webp",
+    "images/desktop/buttons/vw_BTN_blue.webp"
     
   );
 

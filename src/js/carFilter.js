@@ -134,7 +134,7 @@ function addCars(obj){
       attr("data-car-name",key).
       css({
         "background-size": "contain",
-        "background-image" : "url(images/cars_bg/" + value + ".webp" + ")"
+        "background-image" : "url(images/cars_bg/" + value + ".webp" + "),url(images/cars_bg/" + value + ".jpg" + ")"
       });
 
     var img = $("<img class='blue_v' src='images/mobile/blue_v.png'></img>");
