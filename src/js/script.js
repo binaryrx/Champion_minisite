@@ -302,7 +302,6 @@ const validator = new Validator($("form").get(0), {
 
     const selectedCarsByBrand = selectedCars.reduce(
       (prevValue, currentValue) => {
-        console.log(currentValue.dataset.carbrand)
         const cardbrand = currentValue.dataset.carbrand;
         const id = currentValue.id;
         // var result = id.substr(id.indexOf(" ") + 1);
@@ -321,30 +320,33 @@ const validator = new Validator($("form").get(0), {
         prevValue[input.name] = input.value;
         return prevValue;
       }, {});
+      
+    const cars = Object.values(selectedCarsByBrand).flat();
+    const comments = cars.length > 1 ? cars.join(",") : false;
 
     const leadRequest = $.when(
       selectedBrands.map(brand => {
         return lead(
-          Object.assign(formData, {
-            utm_source: utm_source,
-            utm_medium: utm_medium,
-            utm_campaign: utm_campaign,
-            utm_content: utm_content,
-            utm_term: utm_term,
-            reffo: document.location.href,
-            reffo2: document.referrer,
-            from: x.matches ? "mobile" : "desktop",
-            campaignId: brandMapToCampaignId[brand],
-            brand: brand,
-            MediaTitle: utm_source,
-            [selectedCarsByBrand[brand].length > 1 ? "comments" : "model"]:
-              selectedCarsByBrand[brand].length > 1
-                ? "בחירה מרובה " +
-                  brand +
-                  " " +
-                  selectedCarsByBrand[brand].join(",")
-                : selectedCarsByBrand[brand].join("")
-          })
+          Object.assign(
+            formData,
+            {
+              utm_source: utm_source,
+              utm_medium: utm_medium,
+              utm_campaign: utm_campaign,
+              utm_content: utm_content,
+              utm_term: utm_term,
+              reffo: document.location.href,
+              reffo2: document.referrer,
+              from: x.matches ? "mobile" : "desktop",
+              campaignId: brandMapToCampaignId[brand],
+              brand: brand,
+              MediaTitle: utm_source
+            },
+            comments ? { comments: comments } : {},
+            selectedCarsByBrand[brand].length == 1
+              ? { model: selectedCarsByBrand[brand].join("") }
+              : {}
+          )
         );
       })
     );

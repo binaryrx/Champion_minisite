@@ -192,7 +192,7 @@ function addCars(obj){
       $(car).on('click',function(){
         $(this).toggleClass('car-selected')
 
-        console.log($(this).parent()[0].firstChild.classList.toggle('show'))
+        $(this).parent()[0].firstChild.classList.toggle('show');
         
       })
 
@@ -334,13 +334,14 @@ var selected_types = [],
   // var selectedCars = $('.formSelectedCar');
   // if(selectedCars.length){
   //   selectedCars.each(function(){
-  //     $(`div[data-car-name="${$(this)[0].id}"]`).addClass('car-selected');
-  //     $(`div[data-car-name="${$(this)[0].id}`).parent()[0].firstChild.classList += ' show';
+  //     $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).addClass('car-selected');
+  //     console.log($(this)[0].dataset.oCarName);
+  //     $(`div[data-car-name="${$(this)[0].dataset.oCarName}`).parent()[0].firstChild.classList += ' show';
   //   }); 
   // }else{
   //   console.log('there No cars selected');
   // }
-  
+
   //after filter
   $(".selection__cars.cars > .carWrap >  .car").click(function(){
     var selectedCars = $('.formSelectedCar');
@@ -380,8 +381,9 @@ carsHeader.hide();
 // var selectedCars = $('.formSelectedCar');
 //   if(selectedCars.length){
 //     selectedCars.each(function(){
-//       $(`div[data-car-name="${$(this)[0].id}"]`).addClass('car-selected');
-//       $(`div[data-car-name="${$(this)[0].id}`).parent()[0].firstChild.classList += ' show';
+//       $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).addClass('car-selected');
+//       console.log($(this)[0].dataset.oCarName);
+//       $(`div[data-car-name="${$(this)[0].dataset.oCarName}`).parent()[0].firstChild.classList += ' show';
 //     }); 
 //   }else{
 //     console.log('there No cars selected');
@@ -421,62 +423,21 @@ $(".selection__cars.cars > .carWrap > .car").click(function(){
 //every time the function is run,toggle the car-selected class on/off (filter on the car)
 function carSelect(target){
   const targetCar = target;
-  // console.log(targetCar);
+  console.log(targetCar);
   const element = document.querySelector(`div[data-car-name="${targetCar}"]`);
   element.classList.toggle('car-selected');
 }
 
-//for each car in the cars array, bind click event,
-cars.each((function(){
-  $(this).click((function(event){
-    //select the cars area in form
-    var formSelectedCar = $('.formSelectedCar');
-    var targetDiv = event.target;
-    var target = event.target.dataset.carName;
-    // var img = document.createElement('img'); 
-    // img.src = "images/mobile/blue_v.png";
-    // img.style = "position: absolute;top: 50%;width: 40%;right: 50%;transform: translate(50%,-80%)";
-    // img.classList = 'blue_v';
-
-    //append car to list 
-    // if(formSelectedCar.length == 0){
-    //   carSelect(target);
-    //   addToSelectedCar(target);
-    //   //if  4 cars, remove last show error + remove last selection
-    // }else if(formSelectedCar.length >= 4){
-    //   $('.error').fadeIn();
-    //   $(this).removeClass('car-selected');
-    //   removeFromSelectedCars(target)
-    //   // $('.error').fadeOut();
-    // }else{
-    //   if( $(this).hasClass('car-selected') ){
-    //     $(this).removeClass('car-selected');
-    //     removeFromSelectedCars(target)
-    //   }else{
-    //     carSelect(target);
-    //     addToSelectedCar(target);
-    //   }
-    // }    
-    
-  }));
-  
-}));
-
-function buildCarObj(targetType){
-  
-};
-
 
 //console log the clicked brand
-function brandFilter(target){
-    // var target = e.target || e.srcElement || e.originalTarget;
-      // const brandSelected = target.dataset.carBrand;
-      const targetType = target;
-      // console.log(targetType);
-      const element = document.querySelector(`div[data-car-brand="${target}"]`);
-      element.classList.toggle('brand-selected');
-
-}
+// function brandFilter(target){
+//     // var target = e.target || e.srcElement || e.originalTarget;
+//       // const brandSelected = target.dataset.carBrand;
+//       const targetType = target;
+//       // console.log(target);
+//       const element = document.querySelector(`div[data-car-brand="${target}"]`);
+//       element.classList.toggle('brand-selected');
+// }
 
 
 function addToSelectedCar(carName){
@@ -488,7 +449,7 @@ function addToSelectedCar(carName){
 
   divFormSelectedCar.className = 'formSelectedCar selected_'+ carName;;
   
-
+  divFormSelectedCar.setAttribute('data-o-car-name',carName)
 
   
   divInner.className = 'inner';
@@ -532,20 +493,15 @@ function addToSelectedCar(carName){
   a.className = 'removeSelection';
   a.onclick = function(){
     var target = $(this).parent().parent().parent()[0]
-    var targetID = $(this).parent().parent().parent()[0].id;
+    var targetID = $(this).parent().parent().parent()[0].dataset.oCarName;
     var element = $(`div[data-car-name="${targetID}"]`);
-    var elementBlueV = element.parent()[0].firstChild.classList
-    
-   
-
     target.remove();
     element.removeClass('car-selected');
-    elementBlueV.remove('show');
 
-    // console.log(target);
-    // console.log(targetID);
 
-    
+    var elementBlueV = element.parent()[0].firstChild;
+    elementBlueV.classList.remove('show');
+
   };
 
   img.src  = 'images/desktop/X_icon.png';
@@ -558,15 +514,11 @@ function addToSelectedCar(carName){
 }
 
 function removeFromSelectedCars(carName){
-  // console.log(carName);
   selectedCar = document.getElementsByClassName('selected_'+carName)[0];
   if(selectedCar){
-    // console.log('true')
     selectedCar.remove();
   }else{
-    // console.log('false')
     selectedCar.remove();
-  // console.log(selectedCar);
   }
 }
 
@@ -606,48 +558,4 @@ cars.each(function(){
     
     
   });
-  
 });
- Array.from(brands).forEach(brand => brand.addEventListener('click',brandFilter));
-function removeDefaultCars(){
-  var defaultCars = document.querySelectorAll('.default');
-  defaultCars.forEach((function (e){
-    // console.log(e);
-    e.remove();
-  }))
-  
-}
-
-var selectionOptions = $('.selectionCont>div>div');
-
-
-selectionOptions.each((function(){
-  $(this).click((function(event){
-    var e = event.target.dataset;
-
-    if(e.carBrand !== undefined ){
-      removeDefaultCars();
-      // console.log(e.carBrand);
-      // createCarDiv('test');
-
-    }else if(e.carType !== undefined){
-      // console.log('selected ' + e.carType);
-      // console.log(e.carType);
-
-      for (var key in carsObj) {
-        if (carsObj.hasOwnProperty(key)) {
-
-            // console.log(fullObj[key]);
-
-            
-        }
-      }
-      removeDefaultCars();
-      // console.log(e.carType);
-      // createCarDiv('test');
-    }else{
-      console.log('something went wrong');
-    }
-    
-  }));
-}));

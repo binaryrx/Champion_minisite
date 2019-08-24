@@ -383,9 +383,9 @@ if($utm_source){
 
     </script>
 
-    <script src="js/zoom.min.js?v=1.0"></script>
-    <script src="js/formValidationAjax.min.js?v=1.0"></script>
-    <script src="js/script.js?v=1.0"></script>
-    <script src="js/carFilter.js?v=1.0"></script>
+    <script src="js/zoom.min.js?v=1.1"></script>
+    <script src="js/formValidationAjax.min.js?v=1.1"></script>
+    <script src="js/script.js?v=1.1"></script>
+    <script src="js/carFilter.js?v=1.1"></script>
   </body>
 </html>
