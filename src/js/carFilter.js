@@ -287,15 +287,26 @@ var selected_types = [],
 
 
   }
+
+  // Add classes to laready selected cars
+  // var selectedCars = $('.formSelectedCar');
+  // if(selectedCars.length){
+  //   selectedCars.each(function(){
+  //     $(`div[data-car-name="${$(this)[0].id}"]`).addClass('car-selected');
+  //     $(`div[data-car-name="${$(this)[0].id}`).parent()[0].firstChild.classList += ' show';
+  //   }); 
+  // }else{
+  //   console.log('there No cars selected');
+  // }
   
   //after filter
   $(".selection__cars.cars > .carWrap >  .car").click(function(){
+    var selectedCars = $('.formSelectedCar');
+    
   
   
     if($(this).hasClass('car-selected')){
       
-      // if(selectedCars.length )
-      var selectedCars = $('.formSelectedCar');
       
       if(selectedCars.length >=0 && selectedCars.length  <4){
         addToSelectedCar($(this).attr("data-car-name"));
@@ -322,6 +333,18 @@ var selected_types = [],
 
 var carsHeader = $('#carsHeader');
 carsHeader.hide();
+
+  // Add classes to laready selected cars
+// var selectedCars = $('.formSelectedCar');
+//   if(selectedCars.length){
+//     selectedCars.each(function(){
+//       $(`div[data-car-name="${$(this)[0].id}"]`).addClass('car-selected');
+//       $(`div[data-car-name="${$(this)[0].id}`).parent()[0].firstChild.classList += ' show';
+//     }); 
+//   }else{
+//     console.log('there No cars selected');
+//   }
+
 //before filter
 $(".selection__cars.cars > .carWrap > .car").click(function(){
   

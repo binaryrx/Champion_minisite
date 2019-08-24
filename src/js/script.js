@@ -298,11 +298,17 @@ const validator = new Validator($("form").get(0), {
     var selectedCars = Array.from(
       document.getElementsByClassName("formSelectedCar")
     );
+    var str = "Mon 25-Jul-2011";
+    var firstSpace=str.indexOf(" ");
+    var newStr= str.slice(firstSpace);
+
 
     const selectedCarsByBrand = selectedCars.reduce(
       (prevValue, currentValue) => {
         const cardbrand = currentValue.dataset.carbrand;
         const id = currentValue.id;
+        // var result = id.substr(id.indexOf(" ") + 1);
+
         prevValue[cardbrand] = prevValue[cardbrand]
           ? [...prevValue[cardbrand], id]
           : [id];
@@ -336,7 +342,7 @@ const validator = new Validator($("form").get(0), {
               brand: brand,
               MediaTitle: utm_source,
               [isMultiChoice ? "comments" : "model"]: isMultiChoice
-                ? "בחירה מרובה " + selectedCarsByBrand[brand].join(",")
+                ? "בחירה מרובה " + brand + ' '  + selectedCarsByBrand[brand].join(",")
                 : selectedCarsByBrand[brand].join("")
             }
           )
