@@ -99,9 +99,9 @@ $(document).ready(function() {
 
   function DeviceFormDetect(x) {
     if (x.matches) {
-      console.log("mobile");
+      // console.log("mobile");
     } else {
-      console.log("desktop");
+      // console.log("desktop");
       $("section.form").removeClass("open");
       $("section.form").addClass("block");
     }

@@ -193,7 +193,31 @@ function addCars(obj){
         $(this).toggleClass('car-selected')
 
         $(this).parent()[0].firstChild.classList.toggle('show');
+          
         
+
+        
+        //ADD REMOVE CARS FROM FORM
+        if($(this).hasClass('car-selected')){
+          var selectedCars = $('.formSelectedCar');
+          if(selectedCars.length >=0){
+            carsHeader.show();
+          }
+          if(selectedCars.length >=0 && selectedCars.length  <4){
+            addToSelectedCar($(this).attr("data-car-name"));
+          }
+          if(selectedCars.length >= 4){
+            $(this).removeClass('car-selected');
+            $(this).parent()[0].firstChild.classList.remove('show')
+            $('.error').fadeIn();
+          }
+        }else{
+          removeFromSelectedCars($(this)[0].classList[1])
+          var selectedCars = $('.formSelectedCar');
+          
+        }
+
+      
       })
 
    
@@ -330,115 +354,27 @@ var selected_types = [],
 
   }
 
-  // Add classes to laready selected cars
-  // var selectedCars = $('.formSelectedCar');
-  // if(selectedCars.length){
-  //   selectedCars.each(function(){
-  //     $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).addClass('car-selected');
-  //     console.log($(this)[0].dataset.oCarName);
-  //     $(`div[data-car-name="${$(this)[0].dataset.oCarName}`).parent()[0].firstChild.classList += ' show';
-  //   }); 
-  // }else{
-  //   console.log('there No cars selected');
-  // }
+  // re add classses when filtering selected cars
+  var selectedCars = $('.formSelectedCar');
+  if(selectedCars.length){
+    selectedCars.each(function(){
+      $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).addClass('car-selected');
+      try {
+        $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).parent()[0].firstChild.classList += ' show';
+      }
+      catch(error) {
+        // console.error(error);
+      }
+      
+    }); 
+  }else{
+    console.log('there No cars selected');
+  }
 
-  //after filter
-  $(".selection__cars.cars > .carWrap >  .car").click(function(){
-    var selectedCars = $('.formSelectedCar');
-    
-  
-  
-    if($(this).hasClass('car-selected')){
-      
-      
-      if(selectedCars.length >=0 && selectedCars.length  <4){
-        addToSelectedCar($(this).attr("data-car-name"));
-      }
-  
-      if(selectedCars.length >= 4){
-        $(this).removeClass('car-selected');
-        $(this).parent()[0].firstChild.classList.remove('show')
-        // console.log($(this).parent()[0].firstChild.classList.removeClass('show'))
-        $('.error').fadeIn();
-        
-      }
-      // console.log(selectedCars)
-    }else{
-      removeFromSelectedCars($(this)[0].classList[1])
-      var selectedCars = $('.formSelectedCar');
-      // console.log($(this));
-      
-    }
-    
-  
-  });
 });
 
 var carsHeader = $('#carsHeader');
 carsHeader.hide();
-
-  // Add classes to laready selected cars
-// var selectedCars = $('.formSelectedCar');
-//   if(selectedCars.length){
-//     selectedCars.each(function(){
-//       $(`div[data-car-name="${$(this)[0].dataset.oCarName}"]`).addClass('car-selected');
-//       console.log($(this)[0].dataset.oCarName);
-//       $(`div[data-car-name="${$(this)[0].dataset.oCarName}`).parent()[0].firstChild.classList += ' show';
-//     }); 
-//   }else{
-//     console.log('there No cars selected');
-//   }
-
-//before filter
-$(".selection__cars.cars > .carWrap > .car").click(function(){
-  
-  if($(this).hasClass('car-selected')){
-    var selectedCars = $('.formSelectedCar');
-
-    if(selectedCars.length >=0){
-      carsHeader.show();
-    }
-    
-    if(selectedCars.length >=0 && selectedCars.length  <4){
-      addToSelectedCar($(this).attr("data-car-name"));
-    }
-    if(selectedCars.length >= 4){
-      // removeFromSelectedCars($(this)[0].classList[1])  
-      $(this).removeClass('car-selected');
-      $(this).parent()[0].firstChild.classList.remove('show')
-      // console.log($(this).parent()[0].firstChild.classList.remove('show'));
-      $('.error').fadeIn();
-    }
-    
-  }else{
-    removeFromSelectedCars($(this)[0].classList[1])
-    var selectedCars = $('.formSelectedCar');
-    
-  }
-  
-});
-
-
-//function to recieve a car name, selects the car by data-car-name
-//every time the function is run,toggle the car-selected class on/off (filter on the car)
-function carSelect(target){
-  const targetCar = target;
-  console.log(targetCar);
-  const element = document.querySelector(`div[data-car-name="${targetCar}"]`);
-  element.classList.toggle('car-selected');
-}
-
-
-//console log the clicked brand
-// function brandFilter(target){
-//     // var target = e.target || e.srcElement || e.originalTarget;
-//       // const brandSelected = target.dataset.carBrand;
-//       const targetType = target;
-//       // console.log(target);
-//       const element = document.querySelector(`div[data-car-brand="${target}"]`);
-//       element.classList.toggle('brand-selected');
-// }
-
 
 function addToSelectedCar(carName){
   var carName = carName;
@@ -484,7 +420,6 @@ function addToSelectedCar(carName){
         div.innerText = carName;
       }
       else if(carName in car_brands.seat){
-        console.log(carName);
         divFormSelectedCar.setAttribute('data-carbrand','seat');
         divInner.className = 'inner';
         div.innerText = carName;
@@ -521,41 +456,3 @@ function removeFromSelectedCars(carName){
     selectedCar.remove();
   }
 }
-
-  
-
-cars.each(function(){
-  $(this).click(function(event){
-    var formSelectedCar = $('.formSelectedCar');
-    console.log(formSelectedCar.length)
-    var targetDiv = event.target;
-    var target = event.target.dataset.carName;
-    // var img = document.createElement('img'); 
-    // img.src = "images/mobile/blue_v.png";
-    // img.style = "position: absolute;top: 50%;width: 40%;right: 50%;transform: translate(50%,-80%)";
-    // img.classList = 'blue_v';
-
-    //append car to list
-    // if(formSelectedCar.length == 0){
-    //   carSelect(target);
-    //   addToSelectedCar(target);
-    //   //if more than 4 cars, remove last show error + remove last selection
-    // }else if(formSelectedCar.length >= 4){
-    //   $('.error').fadeIn();
-    //   $(this).removeClass('car-selected');
-    //   removeFromSelectedCars(target)
-    //   // $('.error').fadeOut();
-    // }else{
-    //   if( $(this).hasClass('car-selected') ){
-    //     $(this).removeClass('car-selected');
-    //     removeFromSelectedCars(target)
-    //   }else{
-    //     carSelect(target);
-    //     addToSelectedCar(target);
-        
-    //   }
-    // }
-    
-    
-  });
-});
