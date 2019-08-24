@@ -114,6 +114,48 @@ var car_brands = {
   }
 };
 
+var modelNames = {
+  seat: {
+    'Seat Ibiza': 'IBIZA',
+    'Seat Ateca': 'Ateca',
+    'Seat Arona': 'Arona',
+    'Seat leon': 'LEON',
+    'Seat Leon Cupra': 'LEON CUPRA'
+  },
+  skoda: {
+    'Skoda Superb': "NEW SUPERB",
+    'Skoda Kodiaq': "KODIAQ",
+    'Skoda Octavia': 'OCTAVIA',
+    'Skoda Fabia': 'FABIA',
+    'Skoda Karoq': 'KAROQ',
+    'Skoda Octavia RS': 'OCTAVIA RS'
+  },
+  volkswagen:{
+    'Volkswagen Polo': "Polo",
+    "Volkswagen Golf": 'GOLF',
+    "Volkswagen Tiguan": 'Tiguan',
+    "Volkswagen Touareg": 'Touareg',
+    "Volkswagen Golf GTI": 'GOLF GTI',
+    "Volkswagen Polo GTI": 'POLO GTI'
+  },
+  audi:{
+    'Audi A1': 'Audi A1',
+    'Audi A3': 'Audi A3',
+    'Audi A4': 'Audi A4',
+    'Audi A6': 'AUDI A6',
+    'Audi A7': 'AUDI A7',
+    'Audi A8': 'AUDI A8',
+    'Audi Q2': 'Audi Q2',
+    'Audi Q3': 'Audi Q3',
+    'Audi Q5': 'AUDI Q5',
+    'Audi Q7': 'AUDI Q7',
+    'Audi Q8': 'Audi Q8',
+    'Audi Etron': 'audi_etron',
+    'Audi TT': 'TT',
+    'Audi S3': 'AUDI S3'
+  }
+}
+
 //get elements
 var cars = $('.car');
 var carTypes = $('.type');
@@ -442,15 +484,33 @@ function addToSelectedCar(carName){
   var divFormSelectedCar = document.createElement('div');
   var divInner = document.createElement('div');
   var div = document.createElement('div');
+  var result = carName.substr(carName.indexOf(" ") + 1);
 
   divFormSelectedCar.className = 'formSelectedCar selected_'+ carName;;
-  divFormSelectedCar.id = carName;
+  
+
+
+  
   divInner.className = 'inner';
   div.innerText = carName;
 
   var a = document.createElement('a');
   var img = document.createElement('img');
+  console.log(carName);
+
+  if(carName in modelNames.audi){
+      divFormSelectedCar.id = modelNames.audi[carName];
+  }else if( carName in modelNames.skoda){
+    divFormSelectedCar.id = modelNames.skoda[carName];
+  }else if( carName in modelNames.seat){
+    divFormSelectedCar.id = modelNames.seat[carName];
+  }else if( carName in modelNames.volkswagen){
+    divFormSelectedCar.id = modelNames.volkswagen[carName];
+  }
+
+  // divFormSelectedCar.id = result;
      if(carName in car_brands.skoda){ 
+      
         divFormSelectedCar.setAttribute('data-carbrand','skoda');
         divInner.className = 'inner';
         div.innerText = carName;

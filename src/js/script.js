@@ -1,4 +1,3 @@
-
 function Validator(form, options) {
   this.inputs = [].slice.call(form.querySelectorAll("[data-v]"));
   this.options = options;
@@ -143,7 +142,6 @@ $(document).ready(function() {
     "images/desktop/buttons/skoda_BTN_blue.webp",
     "images/desktop/buttons/seat_BTN_blue.webp",
     "images/desktop/buttons/vw_BTN_blue.webp"
-    
   );
 
   //                  //
@@ -299,12 +297,12 @@ const validator = new Validator($("form").get(0), {
       document.getElementsByClassName("formSelectedCar")
     );
     var str = "Mon 25-Jul-2011";
-    var firstSpace=str.indexOf(" ");
-    var newStr= str.slice(firstSpace);
-
+    var firstSpace = str.indexOf(" ");
+    var newStr = str.slice(firstSpace);
 
     const selectedCarsByBrand = selectedCars.reduce(
       (prevValue, currentValue) => {
+        console.log(currentValue.dataset.carbrand)
         const cardbrand = currentValue.dataset.carbrand;
         const id = currentValue.id;
         // var result = id.substr(id.indexOf(" ") + 1);
@@ -317,35 +315,36 @@ const validator = new Validator($("form").get(0), {
       {}
     );
     const selectedBrands = Object.keys(selectedCarsByBrand);
-    const isMultiChoice = selectedBrands.length > 1;
     const formData = $("form")
       .serializeArray()
       .reduce((prevValue, input) => {
         prevValue[input.name] = input.value;
         return prevValue;
       }, {});
+
     const leadRequest = $.when(
       selectedBrands.map(brand => {
         return lead(
-          Object.assign(
-            formData,
-            {
-              utm_source: utm_source,
-              utm_medium: utm_medium,
-              utm_campaign: utm_campaign,
-              utm_content: utm_content,
-              utm_term: utm_term,
-              reffo: document.location.href,
-              reffo2: document.referrer,
-              from: x.matches ? "mobile" : "desktop",
-              campaignId: brandMapToCampaignId[brand],
-              brand: brand,
-              MediaTitle: utm_source,
-              [isMultiChoice ? "comments" : "model"]: isMultiChoice
-                ? "בחירה מרובה " + brand + ' '  + selectedCarsByBrand[brand].join(",")
+          Object.assign(formData, {
+            utm_source: utm_source,
+            utm_medium: utm_medium,
+            utm_campaign: utm_campaign,
+            utm_content: utm_content,
+            utm_term: utm_term,
+            reffo: document.location.href,
+            reffo2: document.referrer,
+            from: x.matches ? "mobile" : "desktop",
+            campaignId: brandMapToCampaignId[brand],
+            brand: brand,
+            MediaTitle: utm_source,
+            [selectedCarsByBrand[brand].length > 1 ? "comments" : "model"]:
+              selectedCarsByBrand[brand].length > 1
+                ? "בחירה מרובה " +
+                  brand +
+                  " " +
+                  selectedCarsByBrand[brand].join(",")
                 : selectedCarsByBrand[brand].join("")
-            }
-          )
+          })
         );
       })
     );
