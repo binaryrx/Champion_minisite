@@ -55,6 +55,7 @@ var carsObj = {
     'Audi Q3':'audi_q3',
     'Audi Q5':'audi_q5',
     'Audi Q7':'audi_q7',
+    'Audi Etron': 'audi_etron',
     'Audi Q8':'audi_q8'
   },
   manager: {
@@ -150,7 +151,7 @@ var modelNames = {
     'Audi Q5': 'AUDI Q5',
     'Audi Q7': 'AUDI Q7',
     'Audi Q8': 'Audi Q8',
-    'Audi Etron': 'audi_etron',
+    'Audi Etron': 'AUDI Etron',
     'Audi TT': 'TT',
     'Audi S3': 'AUDI S3'
   }
@@ -368,7 +369,7 @@ var selected_types = [],
       
     }); 
   }else{
-    console.log('there No cars selected');
+    // console.log('there No cars selected');
   }
 
 });

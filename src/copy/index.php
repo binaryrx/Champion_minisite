@@ -78,7 +78,7 @@ if($utm_source){
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
     <!-- Add Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1.3" />
     <!-- Add FontAwesome -->
     <script src="https://kit.fontawesome.com/7c6882f75f.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700&amp;subset=hebrew" rel="stylesheet"> -->
@@ -119,8 +119,11 @@ if($utm_source){
         <div class="outer">
           <img src="images/desktop/champion_logo.png" alt="" class="champ_logo">
           <div class="inner">
-
-            <img src="images/desktop/sun_desktop.webp" alt="" class="desktop sun">
+            <picture>
+              <source srcset="images/desktop/sun_desktop.png" type="image/jpeg">  
+              <img src="images/desktop/sun_desktop.webp" alt="" class="desktop sun">
+            </picture>
+            
             <div class="textCont">
               <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
               <h2 class="desktop"><span></span> <span>&nbsp;&nbsp;11-13 בספטמבר&nbsp;&nbsp;</span><span></span></h2>
@@ -129,10 +132,14 @@ if($utm_source){
               <h2 class="mobile"><div></div>11-13 בספטמבר</h2>
 
 
-              <div class="buttons desktop downArrow" >
+              <div class="buttons desktop downArrow  " >
                 <a href="#carSelect" >
                   <span>לצפייה בדגמים</span>
-                  <img src="images/desktop/arrows.webp" alt="">
+                  <picture>
+                    <source srcset ="images/desktop/arrows.png" type="images/png">
+                    <img src="images/desktop/arrows.webp" alt="">
+                  </picture>
+                  
                 </a>
               </div>
             </div>
@@ -267,10 +274,10 @@ if($utm_source){
           <footer id="foot">
             <div class="cont">
               <button class="mobile" id="openFormButtom"><span>להשארת פרטים</span> לחצו כאן &nbsp;>></button>
-              <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל.</p>
+              <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל.<br>התמונות להמחשה בלבד. ט.ל.ח.</p>
               <!-- <img src="images/desktop/champion_logo.png" alt="chamption motors"> -->
-              <img src="images/desktop/logos_footer.webp" alt="Volkswagen Seat Skoda Audi" class="desktop">
-              <img src="images/mobile/footer_logos.png" alt="Volkswagen Seat Skoda Audi" class="mobile footerImg">
+              <img src="images/desktop/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="desktop">
+              <img src="images/mobile/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="mobile footerImg">
             </div>
           </footer>
       </section>
@@ -281,9 +288,9 @@ if($utm_source){
 
     </script>
 
-    <script src="js/zoom.min.js?v=1.2"></script>
-    <script src="js/formValidationAjax.min.js?v=1.2"></script>
-    <script src="js/script.js?v=1.2"></script>
-    <script src="js/carFilter.js?v=1.2"></script>
+    <script src="js/zoom.min.js?v=1.3"></script>
+    <script src="js/formValidationAjax.min.js?v=1.3"></script>
+    <script src="js/script.js?v=1.3"></script>
+    <script src="js/carFilter.js?v=1.3"></script>
   </body>
 </html>
