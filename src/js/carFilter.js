@@ -151,7 +151,7 @@ var modelNames = {
     'Audi Q5': 'AUDI Q5',
     'Audi Q7': 'AUDI Q7',
     'Audi Q8': 'Audi Q8',
-    'Audi Etron': 'AUDI Etron',
+    'Audi Etron': 'Audi e-tron',
     'Audi TT': 'TT',
     'Audi S3': 'AUDI S3'
   }
@@ -188,19 +188,23 @@ function addCars(obj){
       img.appendTo(carWrap);
       car.appendTo(carWrap);
       carWrap.appendTo(".selection__cars.cars");
+
+      
+
+
       
 
       $(car).on('click',function(){
         $(this).toggleClass('car-selected')
 
         $(this).parent()[0].firstChild.classList.toggle('show');
-          
+        
         
 
-        
         //ADD REMOVE CARS FROM FORM
         if($(this).hasClass('car-selected')){
           var selectedCars = $('.formSelectedCar');
+          
           if(selectedCars.length >=0){
             carsHeader.show();
           }
@@ -210,7 +214,11 @@ function addCars(obj){
           if(selectedCars.length >= 4){
             $(this).removeClass('car-selected');
             $(this).parent()[0].firstChild.classList.remove('show')
-            $('.error').fadeIn();
+            var error = document.getElementById('error');
+            error.classList.toggle("showError")
+            setTimeout(function(){
+              error.classList.toggle("showError")
+            },1000);
           }
         }else{
           removeFromSelectedCars($(this)[0].classList[1])
@@ -395,6 +403,20 @@ function addToSelectedCar(carName){
   var a = document.createElement('a');
   var img = document.createElement('img');
   // console.log(carName);
+  // var selectedCars = $('.formSelectedCar');
+  // var brandSelect= document.getElementById("brandSelect");
+
+  // if(selectedCars.length <= 0){
+
+  //   console.log(selectedCars.length);
+  //   console.log('enable select brand');
+  //   brandSelect.disabled=false;
+  // }
+  // if(selectedCars.length >= 1){
+  //   console.log(selectedCars.length);
+  //   console.log('disable select brand');
+  //   brandSelect.disabled=true;
+  // }
 
   if(carName in modelNames.audi){
       divFormSelectedCar.id = modelNames.audi[carName];
@@ -457,3 +479,34 @@ function removeFromSelectedCars(carName){
     selectedCar.remove();
   }
 }
+
+//add /remove the brandSelect  
+$('#formCars').bind("DOMSubtreeModified",function(){
+  // console.log('some change');
+  var selectedCars = $('.formSelectedCar');
+  var brandSelect= document.getElementById("brandSelect");
+  if(selectedCars.length == 0){
+    // console.log(selectedCars.length);
+    // console.log('enable select brand');
+    brandSelect.style.display = 'block';
+  }
+  if(selectedCars.length >= 1){
+    // console.log(selectedCars.length);
+    // console.log('disable select brand');
+    brandSelect.style.display = 'none';
+  }
+});
+
+
+//if filtering ends up being empty(no cars )
+$('#theCars').bind("DOMSubtreeModified",function(){
+  var carAmout = $(this)[0].childNodes.length;
+  var carSelectHeader = $('#carSelectionHeader > h2');
+
+  if( carAmout !== 0){
+    carSelectHeader[0].innerText = "לחצו על הדגמים לבחירה";
+  }else{
+    carSelectHeader[0].innerText = "לא קיימים דגמים בקטגוריה זו";
+  }
+});
+

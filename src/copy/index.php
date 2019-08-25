@@ -78,7 +78,7 @@ if($utm_source){
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
     <!-- Add Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1.3" />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1." />
     <!-- Add FontAwesome -->
     <script src="https://kit.fontawesome.com/7c6882f75f.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700&amp;subset=hebrew" rel="stylesheet"> -->
@@ -102,6 +102,9 @@ if($utm_source){
   <script async src="js/ga.js"> </script>
 
   </head>
+  <style>
+    
+  </style>
 
 
   <body>
@@ -119,13 +122,17 @@ if($utm_source){
         <div class="outer">
           <img src="images/desktop/champion_logo.png" alt="" class="champ_logo">
           <div class="inner">
-            <picture>
+            <picture class="logo-container desktop">
               <source srcset="images/desktop/sun_desktop.png" type="image/jpeg">  
-              <img src="images/desktop/sun_desktop.webp" alt="" class="desktop sun">
+              <img src="images/desktop/sun_desktop.webp" alt="" class="desktop sun theSun">
             </picture>
             
             <div class="textCont">
               <h3 class="topTxt">אירוע המכירות של השנה חוזר!</h3>
+              <picture class="logo-container mobile">
+              <source srcset="images/desktop/sun_desktop.png" type="image/jpeg">  
+              <img src="images/desktop/sun_desktop.webp" alt="" class="mobile sun theSun">
+            </picture>
               <h2 class="desktop"><span></span> <span>&nbsp;&nbsp;11-13 בספטמבר&nbsp;&nbsp;</span><span></span></h2>
               <img src="images/desktop/cars_logos_white.png" alt="">
               <h3 class="subTxt">מותגי הרכב המובילים בעולם בהטבות שאסור לפספס</h3>
@@ -136,8 +143,8 @@ if($utm_source){
                 <a href="#carSelect" >
                   <span>לצפייה בדגמים</span>
                   <picture>
-                    <source srcset ="images/desktop/arrows.png" type="images/png">
-                    <img src="images/desktop/arrows.webp" alt="">
+                    <source srcset ="images/desktop/arrows.webp" type="images/webp">
+                    <img src="images/desktop/arrows.png" alt="">
                   </picture>
                   
                 </a>
@@ -158,9 +165,9 @@ if($utm_source){
           </div>
 
           <div class="legal mobile">
-            <a href="pollution.png" target="_blank">דרגות זיהום ובטיחות</a>
+            <a href="pollutionMobile.html" target="_blank">דרגות זיהום ובטיחות</a>
             <span>|</span>
-            <a href="legal.png" target="_blank">הערות משפטיות</a>
+            <a href="legalMobile.html" target="_blank">הערות משפטיות</a>
           </div>
 
         </div>
@@ -187,7 +194,7 @@ if($utm_source){
              <input class="input lastInp" type="email" name="email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' data-v="email" data-required="true">
 
              <!-- brand select -->
-             <select name="brand" id="" >
+             <select name="brand" id="brandSelect" >
              <option value="" disabled selected>בחר מותג</option>
                <option value="skoda">Skoda</option>
                <option value="volkswagen">Volkswagen</option>
@@ -196,7 +203,7 @@ if($utm_source){
              </select>
 
              <!-- Selected cars from car selector -->
-             <div class="formSelectedCars">
+             <div class="formSelectedCars" id="formCarsCont">
                 <h3 id="carsHeader">הרכבים שבחרתי</h3>
                 <div class="formCarsCont" id="formCars">
 
@@ -263,18 +270,18 @@ if($utm_source){
           </div>
         </div>
 
-        <div class="carSelectionHeader">
+        <div class="carSelectionHeader" id="carSelectionHeader">
           <h2>לחצו על הדגמים לבחירה</h2>
-          <div class='error'>ניתן לסמן עד 4 רכבים</div>
+          <div class='error' id="error" onclick="myErrorFunction()">ניתן לסמן עד<br> 4 רכבים בלבד</div>
         </div>
 
-        <div class="selection__cars cars">
+        <div class="selection__cars cars" id="theCars">
           </div>
 
           <footer id="foot">
             <div class="cont">
               <button class="mobile" id="openFormButtom"><span>להשארת פרטים</span> לחצו כאן &nbsp;>></button>
-              <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל.<br>התמונות להמחשה בלבד. ט.ל.ח.</p>
+              <p><br>*כפוף לתקנון ולתנאי המבצע, מימון - בכפוף לתנאי גופי המימון ובאחריותם,<br>טרייד אין כפוך לתנאי חברת אוטודיל. התמונות להמחשה בלבד. ט.ל.ח.</p>
               <!-- <img src="images/desktop/champion_logo.png" alt="chamption motors"> -->
               <img src="images/desktop/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="desktop">
               <img src="images/mobile/logos_footer.png" alt="Volkswagen Seat Skoda Audi" class="mobile footerImg">
@@ -284,13 +291,16 @@ if($utm_source){
     </main>
 
     <script>
-
+       function myErrorFunction(){
+          var error = document.getElementById('error');
+          error.classList.toggle("showError")
+        }
 
     </script>
 
-    <script src="js/zoom.min.js?v=1.3"></script>
-    <script src="js/formValidationAjax.min.js?v=1.3"></script>
-    <script src="js/script.js?v=1.3"></script>
-    <script src="js/carFilter.js?v=1.3"></script>
+    <script src="js/zoom.min.js?v=1.9"></script>
+    <script src="js/formValidationAjax.min.js?v=1.9"></script>
+    <script src="js/script.js?v=1.9"></script>
+    <script src="js/carFilter.js?v=1.9"></script>
   </body>
 </html>

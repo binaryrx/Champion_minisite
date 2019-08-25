@@ -68,11 +68,19 @@ a:target {
 // 	font-size:2.4vw;
 // }
 .error{
-	color:red;
-	display:none;
-	position: relative;
-    margin-top: -2vh;
-    margin-bottom: 2vh;
+	display: none;
+    position: fixed!important;
+    top: 50%;
+    left: 50%;
+    background: rgba(0,0,0,.9);
+    width: 24vw;
+    z-index: 999999999;
+    text-align: inherit;
+    font-size: 2.4vw;
+    font-weight: 400;
+	padding-top: 6vh;
+    padding-bottom: 6vh;
+	transform: translate(0%,-50%);
 }
 .carWrap{
 	position: relative;
@@ -87,8 +95,11 @@ a:target {
 }
 .show{
 	display:block;
-	z-index: 9999;
+	z-index: 999;
 	pointer-events: none;
+}
+.showError{
+	display: block;
 }
 // .owl-lazy{
 	
@@ -104,6 +115,14 @@ a:target {
 		min-height:80vh;
 		// min-height:calc(var(--vh,1vh)*80);;
 
+	}
+	.error{
+		width: 55vw;
+		color: #fff;
+		font-size: 8vw;
+		transform: translate(-50%,-50%);
+		padding-top: 4vh;
+		padding-bottom: 4vh;
 	}
 }
 
