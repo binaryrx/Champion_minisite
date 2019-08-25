@@ -99,9 +99,9 @@ $(document).ready(function() {
 
   function DeviceFormDetect(x) {
     if (x.matches) {
-      // console.log("mobile");
+      console.log("mobile");
     } else {
-      // console.log("desktop");
+      console.log("desktop");
       $("section.form").removeClass("open");
       $("section.form").addClass("block");
     }
@@ -320,7 +320,7 @@ const validator = new Validator($("form").get(0), {
         prevValue[input.name] = input.value;
         return prevValue;
       }, {});
-      
+
     const cars = Object.values(selectedCarsByBrand).flat();
     const comments = cars.length > 1 ? cars.join(",") : false;
 
@@ -342,7 +342,7 @@ const validator = new Validator($("form").get(0), {
               brand: brand,
               MediaTitle: utm_source
             },
-            comments ? { comments: comments } : {},
+            comments ? { comments: "בחירה מרובה: " + comments } : {},
             selectedCarsByBrand[brand].length == 1
               ? { model: selectedCarsByBrand[brand].join("") }
               : {}

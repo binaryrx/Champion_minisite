@@ -205,6 +205,8 @@ function addCars(obj){
         if($(this).hasClass('car-selected')){
           var selectedCars = $('.formSelectedCar');
           
+           var carsHeader = $('#carsHeader');
+          
           if(selectedCars.length >=0){
             carsHeader.show();
           }
@@ -219,7 +221,12 @@ function addCars(obj){
             setTimeout(function(){
               error.classList.toggle("showError")
             },1000);
+          }else{
+            // if(selectedCars.length <= 0){
+            // carsHeader.hide();
+          // }
           }
+
         }else{
           removeFromSelectedCars($(this)[0].classList[1])
           var selectedCars = $('.formSelectedCar');
@@ -344,6 +351,7 @@ var selected_types = [],
 
           $.each(carsObj[value_3],function(key_4, value_4){
  
+             
             if(key_2 == key_4){
               new_cars[key_4] = value_4;
             }
@@ -382,8 +390,7 @@ var selected_types = [],
 
 });
 
-var carsHeader = $('#carsHeader');
-carsHeader.hide();
+
 
 function addToSelectedCar(carName){
   var carName = carName;
@@ -472,12 +479,18 @@ function addToSelectedCar(carName){
 }
 
 function removeFromSelectedCars(carName){
+var carsHeader = $('#carsHeader');
   selectedCar = document.getElementsByClassName('selected_'+carName)[0];
   if(selectedCar){
     selectedCar.remove();
   }else{
     selectedCar.remove();
   }
+
+  // if(selectedCars.length == 0){
+    // console.log(selectedCars.length);
+    // carsHeader.hide();
+  // }
 }
 
 //add /remove the brandSelect  
@@ -485,6 +498,10 @@ $('#formCars').bind("DOMSubtreeModified",function(){
   // console.log('some change');
   var selectedCars = $('.formSelectedCar');
   var brandSelect= document.getElementById("brandSelect");
+  var carsHeader = $('#carsHeader');
+ 
+  
+
   if(selectedCars.length == 0){
     // console.log(selectedCars.length);
     // console.log('enable select brand');
@@ -495,6 +512,13 @@ $('#formCars').bind("DOMSubtreeModified",function(){
     // console.log('disable select brand');
     brandSelect.style.display = 'none';
   }
+  if($(this)[0].childNodes.length <= 1){
+    console.log(carsHeader.hide());
+  }
+  // console.log();
+
+
+
 });
 
 
@@ -509,4 +533,6 @@ $('#theCars').bind("DOMSubtreeModified",function(){
     carSelectHeader[0].innerText = "לא קיימים דגמים בקטגוריה זו";
   }
 });
-
+//start with hidden car header
+var carsHeader = $('#carsHeader');
+carsHeader.hide();

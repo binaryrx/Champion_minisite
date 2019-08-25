@@ -78,7 +78,7 @@ if($utm_source){
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
     <!-- Add Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=1." />
+    <link rel="stylesheet" type="text/css" href="css/main.min.css?v=2.3" />
     <!-- Add FontAwesome -->
     <script src="https://kit.fontawesome.com/7c6882f75f.js"></script>
     <!-- <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,600,700&amp;subset=hebrew" rel="stylesheet"> -->
@@ -189,7 +189,7 @@ if($utm_source){
            <form novalidate="novalidate" id="mainForm" method="GET">
            <input class="input" type="text" name="firstName" placeholder="שם פרטי"  validation-text="יש למלא שם פרטי" data-v="name" data-required="true">
            <input class="input" type="text" name="lastName" placeholder="שם משפחה"  validation-text="יש למלא שם משפחה" data-v="name" data-required="true">
-           <input type="numbers" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" data-v="phone_il" data-required="true">
+           <input type="tel" class="input" name="phone" placeholder="טלפון" validation-text="יש למלא טלפון" data-v="phone_il" data-required="true">
 
              <input class="input lastInp" type="email" name="email" placeholder='דוא"ל' validation-text='יש למלא דוא"ל' data-v="email" data-required="true">
 
@@ -298,9 +298,10 @@ if($utm_source){
 
     </script>
 
-    <script src="js/zoom.min.js?v=1.9"></script>
-    <script src="js/formValidationAjax.min.js?v=1.9"></script>
-    <script src="js/script.js?v=1.9"></script>
-    <script src="js/carFilter.js?v=1.9"></script>
+    <script src="js/zoom.min.js?v=2.3"></script>
+    <script src="js/formValidationAjax.min.js?v=2.3"></script>
+    <script src="js/script.js?v=2.3"></script>
+    <script src="js/carFilter.js?v=2.3"></script>
+    <script src="https://system.user-a.co.il/Customers/3748629/_72hours_championmotors_co_il-2019/andifn1.js" id="andipath"></script> 
   </body>
 </html>
